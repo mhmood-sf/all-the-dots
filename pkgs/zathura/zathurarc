@@ -1,0 +1,8 @@
+include lazyfox
+#include aks-light
+#include aks-dark
+
+set smooth-scroll "true"
+set font "monospace 12"
+
+set recolor true

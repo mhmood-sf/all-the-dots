@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Check if both arguments are provided
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <username> <hostname>"
+    exit 1
+fi
+
+# Extract username and hostname from arguments
+username="$1"
+hostname="$2"
+
+# Define paths for the symbolic links
+configuration="/home/${username}/.config/nixos/hosts/${hostname}/configuration.nix"
+hardware="/home/${username}/.config/nixos/hosts/${hostname}/hardware-configuration.nix"
+
+# Create symlinks.
+ln -s "$configuration" "/etc/nixos/configuration.nix"
+if [ "$?" -ne 0 ]; then
+    exit 1
+fi
+
+ln -s "$hardware" "/etc/nixos/hardware-configuration.nix"
+if [ "$?" -ne 0 ]; then
+    exit 1
+fi
+
+echo "Created symlinks:"
+echo "1. /etc/nixos/configuration.nix -> $configuration"
+echo "2. /etc/nixos/hardware-configuration.nix -> $hardware"

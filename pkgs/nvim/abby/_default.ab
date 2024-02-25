@@ -1,0 +1,15 @@
+expr time {
+strftime('%H:%M')
+}
+
+expr date {
+strftime('%Y-%m-%d')
+}
+
+expr datetime {
+strftime('%Y-%m-%dT%H:%M-05:00')
+}
+
+abbr hr {
+--------------------------------------------------------------------------------
+}

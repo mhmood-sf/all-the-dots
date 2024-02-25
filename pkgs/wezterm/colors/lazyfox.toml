@@ -1,0 +1,14 @@
+[metadata]
+name = "lazyfox"
+
+[colors]
+foreground = "#4D4872"
+background = "#F6F2EE"
+cursor_bg = "#4D4872"
+cursor_border = "#393263"
+cursor_fg = "#F6F2EE"
+selection_bg = "#BEDEDE"
+selection_fg = "#4D4872"
+split = "#EBE5DF"
+ansi = ["#4D4872", "#E9214F", "#07B34C", "#DDC805", "#0C67A8", "#9335C6", "#16A0BE", "#BEDEDE"]
+brights = ["#4D4872", "#F93D69", "#06DF5D", "#F7E225", "#0784DE", "#AD4EDF", "#0DBAE0", "#BEDEDE"]
