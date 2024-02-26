@@ -28,7 +28,7 @@ in
 
       # PDF Editing/Viewing/etc. (see shells/ for texlive)
       zathura
-      gs
+      ghostscript
 
       # Development Tools
       wezterm

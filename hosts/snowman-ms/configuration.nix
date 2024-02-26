@@ -7,9 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      /etc/hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
       # Include user HM configuration.
-      /home/atlin/.config/turbo/home/home.nix
+      /home/atlin/.config/nixos/home/home.nix
     ];
 
   # Bootloader.

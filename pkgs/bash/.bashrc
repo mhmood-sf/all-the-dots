@@ -31,15 +31,7 @@ shopt -s checkwinsize
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Colored Prompts
-# Light: last color is 90 (black) | Dark: last color is 97 (white)
-#PS1='\[\e[0;1;35;5;177m\]\u\[\e[0m\] @ \[\e[0;1;36;5;177m\]\W\[\e[0;0m\]\n\[\e[0;1;33;5;177m\]❯\[\e[0;90m\] \[\e[0m\]'
-#PS1='\[\e[0;1;35;5;177m\]\u\[\e[0m\] @ \[\e[0;1;36;5;177m\]\W\[\e[0;0m\]\n\[\e[0;1;33;5;177m\]▶\[\e[0;90m\] \[\e[0m\]'
-PS1='\[\e[0;1;35;5;177m\]\u\[\e[0m\] @ \[\e[0;1;36;5;177m\]\W\[\e[0;0m\]\n\[\e[0;1;33;5;177m\]󰮯 \[\e[0;90m\] \[\e[0m\]'
-
-# Uncolored Prompts
-#PS1='\u @ \W\n❯ '
-#PS1='\u @ \W\n▶ '
-#PS1='\u @ \W\n󰮯  '
+PS1='\[\e[0;1;35;5;177m\]\u\[\e[0m\] @ \[\e[0;1;36;5;177m\]\W\[\e[0;0m\]\n\[\e[0;1;31;5;177m\]Ξ\[\e[0;90m\] \[\e[0m\]'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -57,8 +49,8 @@ fi
 ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
 # Aliases
-alias rxfetch="bash ~/Notebook/Wiki/Scripts/rxfetch.sh"
-alias panes="bash ~/Notebook/Wiki/Scripts/panes.sh"
+#alias rxfetch="bash ~/Notebook/Wiki/Scripts/rxfetch.sh"
+#alias panes="bash ~/Notebook/Wiki/Scripts/panes.sh"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias mv='mv -i'
@@ -66,3 +58,5 @@ alias cp='cp -i'
 
 # FoodCLUB Tingz
 export FOODCLUB_PACKAGES_TOKEN="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"
+
+export PATH="$HOME/.config/nixos/scripts:$PATH"
