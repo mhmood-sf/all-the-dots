@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.ripgrep = {
-    enable: true;
+    enable = true;
     arguments = [
       "--max-columns-preview"
       "--colors=line:style:bold"

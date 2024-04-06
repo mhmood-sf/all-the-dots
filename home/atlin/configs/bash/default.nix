@@ -11,7 +11,7 @@
       grep = "grep --color=auto";
       # Run mv/cp in interactive mode (ask before overwriting files).
       mv = "mv -i";
-      cp = "cp -i"
+      cp = "cp -i";
     };
 
     initExtra = ''
