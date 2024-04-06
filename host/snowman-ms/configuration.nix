@@ -92,6 +92,7 @@
     # Power Management
     tlp.enable = true;
     upower.enable = true;
+    power-profiles-daemon.enable = false;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
