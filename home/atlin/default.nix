@@ -5,8 +5,8 @@
   home = {
     username = "atlin";
     homeDirectory = "/home/atlin";
-    stateVersion = cfg.stable-version;
-  }
+    stateVersion = "23.11";
+  };
 
   # Enable XDG base directories.
   xdg.enable = true;
