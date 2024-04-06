@@ -7,6 +7,6 @@
   xdg.configFile."fontconfig" = {
     enable = true;
     recursive = true;
-    source = "./dots/";
+    source = ./dots;
   };
 }
