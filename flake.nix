@@ -20,7 +20,7 @@
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
-              useUserPkgs = true;
+              useUserPackages = true;
               users.atlin = ./home/atlin;
               users.guest = ./home/guest;
             };

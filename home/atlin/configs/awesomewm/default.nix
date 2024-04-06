@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 {
   # Enabling/disabling awesome is handled by the de file.
   # This file just handles the config file linking.
