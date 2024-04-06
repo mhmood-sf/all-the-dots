@@ -1,0 +1,3 @@
+# `/home/guest`
+
+Guest user.

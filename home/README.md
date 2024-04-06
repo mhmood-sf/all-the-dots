@@ -1,3 +1,3 @@
-# Home
+# home
 
-Contains home manager config, and development config files for `nix-shell`.
+This contains home manager configuration files for users on my system.

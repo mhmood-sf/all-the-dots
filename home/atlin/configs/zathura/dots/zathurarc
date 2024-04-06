@@ -1,0 +1,6 @@
+include lazyfox
+
+set smooth-scroll "true"
+set font "Open Sans 11"
+
+set recolor true
