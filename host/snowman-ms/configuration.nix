@@ -83,6 +83,11 @@
     curl
   ];
 
+  # TODO: Find a way to move this into the user's config
+  # TODO: instead of host config.
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 
   services = {
     # Enable CUPS to print documents.
