@@ -6,6 +6,6 @@
   xdg.configFile."awesome" = {
     enable = true; # TODO: Make this depend on some DE config/option that's propagated?
     recursive = true;
-    source = "./dots/";
+    source = ./dots;
   };
 }
