@@ -54,6 +54,7 @@ Jet.pack "misc" {
     "git@github.com:ervandew/supertab",
 
     { uri = "git@github.com:lukas-reineke/indent-blankline.nvim",
+      opt = true,
       cfg =
         function()
             local hi = require(vim.g.colors_name).hi
