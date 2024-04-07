@@ -18,6 +18,14 @@ let g:tex_flavor   = "latex"
 let g:tex_viewer   = "zathura"
 let g:tex_preamble = stdpath("config") . "ftplugin/tex/preamble.tex"
 
+function! s:check_exe() abort
+    if executable("pdflatex") == 0
+        echo "pdflatex not found! Please ensure the executable is in PATH!"
+        return 0
+    endif
+    return 1
+endfunction
+
 " First arg is the file to open. If no arg
 " is given, then it uses the main doc. If
 " no main doc is set, then it defaults to
@@ -48,6 +56,10 @@ endfunction
 " no main doc is set, then it defaults to
 " the current buffer.
 function! s:build(...) abort
+    if s:check_exe() == 0
+        return
+    endif
+
     if a:0 > 0
         let l:fpath = a:1
     elseif exists("s:tex_maindoc")
@@ -119,6 +131,10 @@ endfunction
 " default the current line) and
 " opens it for preview.
 function! s:preview() range
+    if s:check_exe() == 0
+        return
+    endif
+
     if filereadable(g:tex_preamble)
         let l:preamble = readfile(g:tex_preamble)
     else
@@ -142,4 +158,3 @@ function! s:preview() range
     let l:successful = s:build(l:file)
     if l:successful | call s:open(l:file) | endif
 endfunction
-
