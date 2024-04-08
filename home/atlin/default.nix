@@ -2,17 +2,29 @@
 {
   programs.home-manager.enable = true;
 
+  # User setup
   home = {
     username = "atlin";
     homeDirectory = "/home/atlin";
     stateVersion = "23.11";
   };
 
+  # Shell scripts go here.
+  home.file."bin" = {
+    enable = true;
+    source = ./scripts;
+  };
+
+  # Add bin to PATH.
+  home.sessionPath = [
+    "$HOME/bin"
+  ];
+
   # Enable XDG base directories.
   xdg.enable = true;
 
   # Programs & their configs (comment out a program to disable it).
-  # Some programs don't offer any nix options; those are listed below
+  # Some programs don't have options; those are listed below
   # in `home.packages`.
   imports = [
     # Window Manager (comment out if using a different one).
@@ -52,6 +64,8 @@
     zoom-us
     logisim-evolution # TODO: Remove after end of semester.
     mars-mips # TODO: Remove after end of semester.
+    mpv # TODO: Remove after end of semester.
+    netcat-gnu # TODO: Remove after end of semester.
     obsidian
 
     # Fonts
@@ -75,7 +89,6 @@
     wl-clipboard # Clipboard for Wayland
     ibus # Emoji
   ];
-
 
   # List of permitted insecure packages
   nixpkgs.config.permittedInsecurePackages = [
