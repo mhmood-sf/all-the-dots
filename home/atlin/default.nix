@@ -16,11 +16,6 @@
     source = ./scripts;
   };
 
-  # Add bin to PATH.
-  home.sessionPath = [
-    "$HOME/bin"
-  ];
-
   # Enable XDG base directories.
   xdg.enable = true;
 

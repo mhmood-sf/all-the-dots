@@ -23,6 +23,9 @@
           echo "Opening shell @ /home/atlin/Source/nixos/home/atlin/shells/$1.nix"
           nix-shell /home/atlin/Source/nixos/home/atlin/shells/$1.nix
       }
+
+      # Add ~/bin to PATH
+      PATH="$PATH:$HOME/bin"
     '';
   };
 }
