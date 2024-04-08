@@ -58,6 +58,9 @@
     cascadia-code
     open-sans
     noto-fonts-color-emoji
+    cm_unicode
+    lmmath
+    xits-math
 
     # CLI Tools & Other Utilities
     fd
