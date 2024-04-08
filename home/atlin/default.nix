@@ -12,6 +12,7 @@
   # Shell scripts go here.
   home.file."bin" = {
     enable = true;
+    recursive = true;
     source = ./scripts;
   };
 
