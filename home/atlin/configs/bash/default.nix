@@ -17,6 +17,12 @@
     initExtra = ''
       # Prompt.
       PS1='\[\e[0;1;35;5;177m\]\u\[\e[0m\] @ \[\e[0;1;36;5;177m\]\W\[\e[0;0m\]\n\[\e[0;1;31;5;177m\]Ξ\[\e[0;90m\] \[\e[0m\]'
+
+      # Open nix shells easily
+      function shell() {
+          echo "Opening shell @ /home/atlin/Source/nixos/home/atlin/shells/$1.nix"
+          nix-shell /home/atlin/Source/nixos/home/atlin/shells/$1.nix
+      }
     '';
   };
 }
