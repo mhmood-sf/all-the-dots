@@ -1,7 +1,7 @@
 { pkgs, hm-unstable, ... }:
 {
   imports = [
-    hm-unstable + "/modules/services/window-managers/river.nix"
+    (hm-unstable + "/modules/services/window-managers/river.nix")
   ];
 
   wayland.windowManager.river = {

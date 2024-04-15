@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 {
   c       = (import ./c.nix { inherit pkgs; });
   haskell = (import ./haskell.nix { inherit pkgs; });
