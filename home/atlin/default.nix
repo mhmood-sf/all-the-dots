@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, hm-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   programs.home-manager.enable = true;
 
@@ -24,7 +24,7 @@
   # in `home.packages`.
   imports = [
     # Window Manager / Desktop Environment
-    (import ./de/river { inherit pkgs hm-unstable; })
+    (import ./de/river { inherit pkgs; })
 
     # Work / Everyday GUI Applications
     (import ./configs/firefox { inherit pkgs; })

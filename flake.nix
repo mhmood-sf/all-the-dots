@@ -9,19 +9,14 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    home-manager-unstable = {
-      url = "github:nix-community/home-manager";
-    };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
       hm = home-manager;
-      hm-unstable = home-manager-unstable;
     in {
     # Used with `nixos-rebuild --flake .#<hostname>`
     nixosConfigurations = {
@@ -31,7 +26,6 @@
 
           hm.nixosModules.home-manager {
             home-manager = {
-              extraSpecialArgs = { inherit hm-unstable; };
               useGlobalPkgs = true;
               useUserPackages = true;
               users.atlin = ./home/atlin;

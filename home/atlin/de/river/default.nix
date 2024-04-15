@@ -1,12 +1,7 @@
-{ pkgs, hm-unstable, ... }:
+{ pkgs, ... }:
 {
-  imports = [
-    (hm-unstable + "/modules/services/window-managers/river.nix")
-  ];
-
   wayland.windowManager.river = {
     enable = true;
-    package = pkgs.river;
 
     extraSessionVariables = {
       MOZ_ENABLE_WAYLAND = "1";
