@@ -1,5 +1,5 @@
 {
-  description = "Flake";
+  description = "my flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -28,5 +28,8 @@
         ];
       };
     };
+
+    # Used with `nix develop .#<lang>`
+    devShells.x86_64-linux = (import ./shells { inherit nixpkgs });
   };
 }
