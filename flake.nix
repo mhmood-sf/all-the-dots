@@ -10,13 +10,14 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
-    # Used with `nixos-rebuild --flake .#<hostname>`
-    nixosConfigurations = let
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+    let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in {
+    # Used with `nixos-rebuild --flake .#<hostname>`
+    nixosConfigurations = {
       snowman-ms = nixpkgs.lib.nixosSystem {
         modules = [
           ./host/snowman-ms
