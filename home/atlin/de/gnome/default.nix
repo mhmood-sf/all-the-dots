@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  # Enable the X11 windowing system. TODO: Why? Gnome uses Wayland.
+  # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
 
