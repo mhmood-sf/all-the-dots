@@ -20,8 +20,8 @@
 
       # Open nix shells easily
       function shell() {
-          echo "Opening shell @ /home/atlin/Source/nixos/home/atlin/shells/$1.nix"
-          nix-shell /home/atlin/Source/nixos/home/atlin/shells/$1.nix
+          echo "Entering $1 shell..."
+          nix develop /home/atlin/Source/nixos#$1
       }
 
       # Add ~/bin to PATH

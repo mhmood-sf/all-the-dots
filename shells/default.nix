@@ -1,10 +1,12 @@
-{ pkgs, ... }:
+{ pkgs }:
+
 {
-  c       = (import ./c.nix { inherit pkgs; });
-  haskell = (import ./haskell.nix { inherit pkgs; });
-  lean    = (import ./lean.nix { inherit pkgs; });
-  node    = (import ./node.nix { inherit pkgs; });
-  python  = (import ./python.nix { inherit pkgs; });
-  sml     = (import ./sml.nix { inherit pkgs; });
-  tex     = (import ./tex.nix { inherit pkgs; });
+  c       = pkgs.callPackage ./c.nix { };
+  haskell = pkgs.callPackage ./haskell.nix { };
+  hello   = pkgs.callPackage ./hello.nix { };
+  lean    = pkgs.callPackage ./lean.nix { };
+  node    = pkgs.callPackage ./node.nix { };
+  python  = pkgs.callPackage ./python.nix { };
+  sml     = pkgs.callPackage ./sml.nix { };
+  tex     = pkgs.callPackage ./tex.nix { };
 }

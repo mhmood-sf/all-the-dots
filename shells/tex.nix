@@ -1,7 +1,10 @@
-{ pkgs }:
+{
+  mkShell,
+  texliveSmall
+}:
 
-pkgs.mkShell {
-  packages = with pkgs; [
+mkShell {
+  packages = [
     (texliveSmall.withPackages (ps: with ps; [
       newpx
       enumitem

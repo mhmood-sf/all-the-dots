@@ -1,7 +1,10 @@
-{ pkgs }:
+{
+  mkShell,
+  lean4
+}:
 
-pkgs.mkShell {
-  packages = with pkgs; [
+mkShell {
+  packages = [
     lean4
   ];
 }

@@ -1,7 +1,10 @@
-{ pkgs }:
+{
+  mkShell,
+  python3
+}:
 
-pkgs.mkShell {
-  packages = with pkgs; [
+mkShell {
+  packages = [
     (python3.withPackages (python-pkgs: [
       python-pkgs.requests
     ]))

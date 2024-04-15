@@ -1,7 +1,10 @@
-{ pkgs }:
+{
+  mkShell,
+  smlnj
+}:
 
-pkgs.mkShell {
-  packages = with pkgs; [
+mkShell {
+  packages = [
     smlnj
   ];
 }

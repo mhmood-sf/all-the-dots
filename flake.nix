@@ -36,7 +36,7 @@
       };
     };
 
-    # Used with `nix develop .#<lang>`
-    devShells.x86_64-linux = (import ./shells { inherit pkgs pkgs-unstable; });
+    # Used with `nix [develop|shell] <flake>#<lang>`
+    devShells.${system} = import ./shells { inherit pkgs; };
   };
 }

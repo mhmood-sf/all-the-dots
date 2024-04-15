@@ -1,7 +1,16 @@
-{ pkgs }:
+{
+  mkShell,
+  libgcc,
+  gcc,
+  gnumake,
+  cmake,
+  valgrind,
+  clang-tools,
+  gdb
+}:
 
-pkgs.mkShell {
-  packages = with pkgs; [
+mkShell {
+  packages = [
     libgcc
     gcc
     gnumake
