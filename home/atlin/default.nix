@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nixpkgs-unstable, ... }:
 {
   programs.home-manager.enable = true;
 
@@ -24,7 +24,7 @@
   # in `home.packages`.
   imports = [
     # Window Manager / Desktop Environment
-    (import ./de/gnome { inherit pkgs; })
+    (import ./de/river { inherit pkgs nixpkgs-unstable; })
 
     # Work / Everyday GUI Applications
     (import ./configs/firefox { inherit pkgs; })

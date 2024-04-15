@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, ... }: {
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
     # Used with `nixos-rebuild --flake .#<hostname>`
     nixosConfigurations = {
       snowman-ms = nixpkgs.lib.nixosSystem {
@@ -19,6 +19,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
+              extraSpecialArgs = { inherit nixpkgs-unstable; };
               useGlobalPkgs = true;
               useUserPackages = true;
               users.atlin = ./home/atlin;
@@ -30,6 +31,6 @@
     };
 
     # Used with `nix develop .#<lang>`
-    devShells.x86_64-linux = (import ./shells { inherit nixpkgs });
+    devShells.x86_64-linux = (import ./shells { inherit nixpkgs; });
   };
 }
