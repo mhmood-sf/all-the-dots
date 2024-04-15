@@ -24,7 +24,7 @@
   # in `home.packages`.
   imports = [
     # Window Manager / Desktop Environment
-    (import ./de/river { inherit pkgs; })
+    (import ./de/gnome { inherit pkgs; })
 
     # Work / Everyday GUI Applications
     (import ./configs/firefox { inherit pkgs; })

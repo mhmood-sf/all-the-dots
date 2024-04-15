@@ -5,6 +5,6 @@
     ./hardware-configuration.nix
 
     # Desktop Env / Window Manager
-    ../../de/river
+    ../../de/gnome
   ];
 }
