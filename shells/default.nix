@@ -1,10 +1,10 @@
-{ nixpkgs }:
+{ pkgs }:
 {
-  c       = (import ./c.nix { inherit nixpkgs; });
-  haskell = (import ./haskell.nix { inherit nixpkgs; });
-  lean    = (import ./lean.nix { inherit nixpkgs; });
-  node    = (import ./node.nix { inherit nixpkgs; });
-  python  = (import ./python.nix { inherit nixpkgs; });
-  sml     = (import ./sml.nix { inherit nixpkgs; });
-  tex     = (import ./tex.nix { inherit nixpkgs; });
+  c       = (import ./c.nix { inherit pkgs; });
+  haskell = (import ./haskell.nix { inherit pkgs; });
+  lean    = (import ./lean.nix { inherit pkgs; });
+  node    = (import ./node.nix { inherit pkgs; });
+  python  = (import ./python.nix { inherit pkgs; });
+  sml     = (import ./sml.nix { inherit pkgs; });
+  tex     = (import ./tex.nix { inherit pkgs; });
 }

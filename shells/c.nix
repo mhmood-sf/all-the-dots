@@ -1,7 +1,7 @@
-{ nixpkgs }:
+{ pkgs }:
 
-nixpkgs.mkShell {
-  packages = with nixpkgs; [
+pkgs.mkShell {
+  packages = with pkgs; [
     libgcc
     gcc
     gnumake

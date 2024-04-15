@@ -1,7 +1,7 @@
-{ pkgs, nixpkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   wayland.windowManager.river = {
-    package = nixpkgs-unstable.river;
+    package = pkgs-unstable.river;
     enable = true;
 
     extraSessionVariables = {
