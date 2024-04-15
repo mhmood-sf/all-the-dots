@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  # Enable the X11 windowing system.
+  # Enable the X11 windowing system. TODO: Why? Gnome uses Wayland.
   services.xserver = {
     enable = true;
 
@@ -16,4 +16,10 @@
       enable = true;
     };
   };
+
+  # Other packages needed under this DE.
+  home.packages = with pkgs; [
+    # Clipboard for Wayland
+    wl-clipboard
+  ];
 }

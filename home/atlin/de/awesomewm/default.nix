@@ -22,11 +22,27 @@
       startx.enable = true;
     };
 
+    # Enable awesome, but leave the rest of the config to home manager.
     windowManager.awesome = {
       enable = true;
     };
   };
 
-  # Enable gestures
-  services.touchegg.enable = true;
+  xdg.configFile."awesome" = {
+    enable = true;
+    recursive = true;
+    source = ./dots;
+  };
+
+  # Other programs used/needed when running this WM configuration.
+  imports = [
+    # Custom gestures.
+    (import ../../configs/touchegg { inherit pkgs; })
+  ]
+
+  # Other packages.
+  home.packages = with pkgs; [
+    # Enable clipboard
+    xclip
+  ]
 }

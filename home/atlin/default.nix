@@ -23,10 +23,8 @@
   # Some programs don't have options; those are listed below
   # in `home.packages`.
   imports = [
-    # Window Manager (comment out if using a different one).
-    # (import ./configs/awesomewm { inherit pkgs; })
-    # Custom gestures (probably comment out if using a DE instead of WM).
-    # (import ./configs/touchegg { inherit pkgs; })
+    # Window Manager / Desktop Environment
+    (import ./de/river { inherit pkgs; })
 
     # Work / Everyday GUI Applications
     (import ./configs/firefox { inherit pkgs; })
@@ -58,10 +56,6 @@
   home.packages = with pkgs; [
     # Work / Everyday GUI Applications
     zoom-us
-    logisim-evolution # TODO: Remove after end of semester.
-    mars-mips # TODO: Remove after end of semester.
-    mpv # TODO: Remove after end of semester.
-    netcat-gnu # TODO: Remove after end of semester.
     obsidian
 
     # Fonts
@@ -82,7 +76,6 @@
     ghostscript
 
     # Misc.
-    wl-clipboard # Clipboard for Wayland
     ibus # Emoji
   ];
 
