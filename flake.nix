@@ -36,7 +36,7 @@
       };
     };
 
-    # Used with `nix [develop|shell] <flake>#<lang>`
+    # Used with `nix develop <flake>#<lang>`
     devShells.${system} = import ./shells { inherit pkgs; };
   };
 }

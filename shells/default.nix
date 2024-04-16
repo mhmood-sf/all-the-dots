@@ -1,6 +1,6 @@
 { pkgs }:
 
-{
+rec {
   c       = pkgs.callPackage ./c.nix { };
   haskell = pkgs.callPackage ./haskell.nix { };
   hello   = pkgs.callPackage ./hello.nix { };
@@ -9,4 +9,6 @@
   python  = pkgs.callPackage ./python.nix { };
   sml     = pkgs.callPackage ./sml.nix { };
   tex     = pkgs.callPackage ./tex.nix { };
+
+  default = hello;
 }
