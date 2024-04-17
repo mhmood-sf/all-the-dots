@@ -24,32 +24,32 @@
   # in `home.packages`.
   imports = [
     # Window Manager / Desktop Environment
-    (import ./de/gnome { inherit pkgs; })
+    ./de/gnome
 
     # Work / Everyday GUI Applications
-    (import ./configs/firefox { inherit pkgs; })
-    (import ./configs/thunderbird { inherit pkgs; })
+    ./configs/firefox
+    ./configs/thunderbird
 
     # Development Tools
-    (import ./configs/neovim { inherit pkgs; })
-    (import ./configs/wezterm { inherit pkgs; })
+    ./configs/neovim
+    ./configs/wezterm
 
     # CLI Tools & Other Utilities
-    (import ./configs/gitui { inherit pkgs; })
-    (import ./configs/ripgrep { inherit pkgs; })
-    (import ./configs/htop { inherit pkgs; })
-    (import ./configs/eza { inherit pkgs; })
-    (import ./configs/flameshot { inherit pkgs; })
+    ./configs/gitui
+    ./configs/ripgrep
+    ./configs/htop
+    ./configs/eza
+    ./configs/flameshot
 
     # Viewing files (PDFs, images, file explorers etc.)
-    (import ./configs/feh { inherit pkgs; })
-    (import ./configs/zathura { inherit pkgs; })
+    ./configs/feh
+    ./configs/zathura
 
     # Fonts
-    (import ./configs/fontconfig { inherit pkgs; })
+    ./configs/fontconfig
 
     # Misc.
-    (import ./configs/bash { inherit pkgs; })
+    ./configs/bash
   ];
 
   # Other packages (fonts, other stuff)

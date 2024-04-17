@@ -1,12 +1,13 @@
-{ pkgs, ... }:
 {
-  programs.wezterm = {
-    enable = true;
-  };
+  config = {
+    programs.wezterm = {
+      enable = true;
+    };
 
-  xdg.configFile."wezterm" = {
-    enable = true;
-    recursive = true;
-    source = ./dots;
+    xdg.configFile."wezterm" = {
+      enable = true;
+      recursive = true;
+      source = ./dots;
+    };
   };
 }

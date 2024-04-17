@@ -1,12 +1,13 @@
-{ pkgs, ... }:
 {
-  # Enable touchegg.
-  services.touchegg.enable = true;
+  config = {
+    # Enable touchegg.
+    services.touchegg.enable = true;
 
-  # Load config
-  xdg.configFile."touchegg" = {
-    enable = true;
-    recursive = true;
-    source = ./dots;
+    # Load config
+    xdg.configFile."touchegg" = {
+      enable = true;
+      recursive = true;
+      source = ./dots;
+    };
   };
 }

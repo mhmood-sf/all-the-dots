@@ -1,10 +1,11 @@
-{ pkgs, ... }:
 {
-  programs.thunderbird = {
-    enable = true;
-    profiles = {
-      default = {
-        isDefault = true;
+  config = {
+    programs.thunderbird = {
+      enable = true;
+      profiles = {
+        default = {
+          isDefault = true;
+        };
       };
     };
   };

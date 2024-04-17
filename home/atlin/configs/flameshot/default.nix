@@ -1,11 +1,12 @@
-{ pkgs, ... }:
 {
-  services.flameshot = {
-    enable = true;
-    settings = {
-      General = {
-        disabledTrayIcon = true;
-        showStartupLaunchMessage = false;
+  config = {
+    services.flameshot = {
+      enable = true;
+      settings = {
+        General = {
+          disabledTrayIcon = true;
+          showStartupLaunchMessage = false;
+        };
       };
     };
   };

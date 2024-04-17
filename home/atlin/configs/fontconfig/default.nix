@@ -1,12 +1,13 @@
-{ pkgs, ... }:
 {
-  fonts.fontconfig = {
-    enable = true;
-  };
+  config = {
+    fonts.fontconfig = {
+      enable = true;
+    };
 
-  xdg.configFile."fontconfig" = {
-    enable = true;
-    recursive = true;
-    source = ./dots;
+    xdg.configFile."fontconfig" = {
+      enable = true;
+      recursive = true;
+      source = ./dots;
+    };
   };
 }
