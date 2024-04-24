@@ -40,6 +40,7 @@
     ./configs/htop
     ./configs/eza
     ./configs/flameshot
+    ./configs/bat
 
     # Viewing files (PDFs, images, file explorers etc.)
     ./configs/feh
@@ -74,9 +75,10 @@
     glow
     unzip
     ghostscript
+    monolith
 
     # Misc.
-    ibus # Emoji
+    ibus
   ];
 
   # List of permitted insecure packages
