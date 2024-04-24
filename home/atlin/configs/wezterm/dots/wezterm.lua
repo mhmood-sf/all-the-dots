@@ -17,41 +17,58 @@ local cfg = {
 
     xcursor_theme = "Adwaita",
 
+    window_decorations = "RESIZE",
+
     keys = {
         {
             key = "LeftArrow",
-            mods = "ALT|SHIFT",
+            mods = "ALT",
             action = act.ActivatePaneDirection "Left",
         },
         {
             key = "RightArrow",
-            mods = "ALT|SHIFT",
+            mods = "ALT",
             action = act.ActivatePaneDirection "Right",
         },
         {
             key = "UpArrow",
-            mods = "ALT|SHIFT",
+            mods = "ALT",
             action = act.ActivatePaneDirection "Up",
         },
         {
             key = "DownArrow",
-            mods = "ALT|SHIFT",
+            mods = "ALT",
             action = act.ActivatePaneDirection "Down",
         },
         {
-            key = "W",
-            mods = "CTRL",
-            action = act.CloseCurrentPane { confirm = true }
-        },
-        {
-            key = "V",
+            key = "d",
             mods = "ALT",
             action = act.SplitVertical
         },
         {
-            key = "H",
+            key = "r",
             mods = "ALT",
             action = act.SplitHorizontal
+        },
+        {
+            key = "h",
+            mods = "ALT",
+            action = act.AdjustPaneSize { "Left", 5 },
+        },
+        {
+            key = "j",
+            mods = "ALT",
+            action = act.AdjustPaneSize { "Down", 5 },
+        },
+        {
+            key = "k",
+            mods = "ALT",
+            action = act.AdjustPaneSize { "Up", 5 }
+        },
+        {
+            key = "l",
+            mods = "ALT",
+            action = act.AdjustPaneSize { "Right", 5 },
         },
         {
             key = "V",
