@@ -1,0 +1,146 @@
+    font = "Sans"
+    font-size = 20
+    text-color = #FFFFFF
+
+    # Prompt text theme
+    prompt-color = #FFFFFF
+    prompt-background = #00000000
+    prompt-background-padding = 0
+    prompt-background-corner-radius = 0
+
+    # Placeholder text theme
+    placeholder-color = #FFFFFFA8
+    placeholder-background = #00000000
+    placeholder-background-padding = 0
+    placeholder-background-corner-radius = 0
+
+    # Input text theme
+    input-color = #FFFFFF
+    input-background = #00000000
+    input-background-padding = 0
+    input-background-corner-radius = 0
+
+    # Default result text theme
+    default-result-color = #FFFFFF
+    default-result-background = #00000000
+    default-result-background-padding = 0
+    default-result-background-corner-radius = 0
+
+    # Selection text
+    selection-color = #F92672
+    selection-background = #00000000
+    selection-background-padding = 0
+    selection-background-corner-radius = 0
+
+    # Matching portion of selection text
+    selection-match-color = #00000000
+
+    # Text cursor theme
+    text-cursor-style = bar
+
+    # Color of the text cursor
+    text-cursor-color = #FFFFFF
+
+    # Color of text behind the text cursor when text-cursor-style = block
+    # text-cursor-background = #000000
+
+    # Corner radius of the text cursor
+    text-cursor-corner-radius = 0
+
+    # Thickness of the bar and underscore text cursors.
+    # text-cursor-thickness = 2
+
+    # Prompt to display.
+    prompt-text = "Run: "
+
+    # Extra horizontal padding between prompt and input.
+    prompt-padding = 0
+
+    # Placeholder input text.
+    placeholder-text = ""
+
+    # Maximum number of results to display.
+    # If 0, tofi will draw as many results as it can fit in the window.
+    num-results = 0
+
+    # Spacing between results in pixels. Can be negative.
+    result-spacing = 0
+
+    # List results horizontally.
+    horizontal = false
+
+    # Minimum width of input in horizontal mode.
+    min-input-width = 0
+
+    # Width and height of the window. Can be pixels or a percentage.
+    width = 1280
+    height = 720
+
+    # Window background color
+    background-color = #1B1D1E
+
+    # Width of the border outlines in pixels.
+    outline-width = 4
+
+    # Border outline color
+    outline-color = #080800
+
+    # Width of the border in pixels.
+    border-width = 12
+
+    # Border color
+    border-color = #F92672
+
+    # Radius of window corners in pixels.
+    corner-radius = 0
+
+    # Padding between borders and text. Can be pixels or a percentage.
+    padding-top = 8
+    padding-bottom = 8
+    padding-left = 8
+    padding-right = 8
+
+    # Whether to scale the window by the output's scale factor.
+    scale = true
+
+    # Location on screen to anchor the window to.
+    #
+    # Supported values: top-left, top, top-right, right, bottom-right,
+    # bottom, bottom-left, left, center.
+    anchor = center
+
+    # Window offset from edge of screen. Only has an effect when anchored
+    # to the relevant edge. Can be pixels or a percentage.
+    margin-top = 0
+    margin-bottom = 0
+    margin-left = 0
+    margin-right = 0
+
+    # Hide the mouse cursor.
+    hide-cursor = false
+
+    # Show a text cursor in the input field.
+    text-cursor = false
+
+    # Select the matching algorithm used. If normal, substring matching is
+    # used, weighted to favour matches closer to the beginning of the
+    # string. If prefix, only substrings at the beginning of the string are
+    # matched. If fuzzy, searching is performed via a simple fuzzy matching
+    # algorithm.
+    #
+    # Supported values: normal, prefix, fuzzy
+    matching-algorithm = normal
+
+    # If true, directly launch applications on selection when in drun mode.
+    # Otherwise, just print the command line to stdout.
+    drun-launch = true
+
+    # If true, allow multiple simultaneous processes.
+    # If false, create a lock file on startup to prevent multiple instances
+    # from running simultaneously.
+    multi-instance = false
+
+    # Assume input is plain ASCII, and disable some Unicode handling
+    # functions. This is faster, but means e.g. a search for "e" will not
+    # match "é".
+    ascii-input = true
