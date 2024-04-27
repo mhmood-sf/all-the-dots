@@ -19,12 +19,19 @@
   # Enable XDG base directories.
   xdg.enable = true;
 
+  # Set the cursor theme.
+  home.pointerCursor = {
+    name = "Graphite light Cursors";
+    package = pkgs.graphite-cursors;
+    gtk.enable = true;
+  };
+
   # Programs & their configs (comment out a program to disable it).
   # Some programs don't have options; those are listed below
   # in `home.packages`.
   imports = [
     # Window Manager / Desktop Environment
-    ./de/gnome
+    ./de/river
 
     # Work / Everyday GUI Applications
     ./configs/firefox
@@ -39,7 +46,6 @@
     ./configs/ripgrep
     ./configs/htop
     ./configs/eza
-    ./configs/flameshot
     ./configs/bat
 
     # Viewing files (PDFs, images, file explorers etc.)
@@ -66,6 +72,7 @@
     cm_unicode
     lmmath
     xits-math
+    font-awesome
 
     # CLI Tools & Other Utilities
     fd
@@ -78,7 +85,7 @@
     monolith
 
     # Misc.
-    ibus
+    ibus # Emojis. TODO: Does this even work properly on wayland?
   ];
 
   # List of permitted insecure packages
