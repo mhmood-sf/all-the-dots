@@ -84,9 +84,6 @@ map("n", "<C-j>", "<CMD>split<CR><C-w>j", opts)
 -- <Esc> to clear search highlighting
 map("n", "<Esc>", "<CMD>nohlsearch|diffupdate<CR><C-L>", opts)
 
---[ Editor Commands ]--
-cmd "command! -nargs=0 InitLua edit $MYVIMRC"
-
 --[ Plugins ]--
 -- We load these near the end, so that any plugin-related global variables are
 -- defined before the plugins are loaded.
