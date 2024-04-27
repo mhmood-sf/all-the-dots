@@ -78,10 +78,9 @@
     git
     wget
     curl
+    acpi # For battery status
   ];
 
-  # TODO: Find a way to move this into the user's config
-  # TODO: instead of host config.
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
