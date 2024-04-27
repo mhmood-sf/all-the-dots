@@ -16,15 +16,15 @@
     source = ./scripts;
   };
 
+  # Copy over fonts
+  xdg.dataFile."fonts" = {
+    enable = true;
+    recursive = true;
+    source = ./fonts;
+  };
+
   # Enable XDG base directories.
   xdg.enable = true;
-
-  # Set the cursor theme.
-  home.pointerCursor = {
-    name = "Graphite light Cursors";
-    package = pkgs.graphite-cursors;
-    gtk.enable = true;
-  };
 
   # Programs & their configs (comment out a program to disable it).
   # Some programs don't have options; those are listed below
@@ -39,7 +39,8 @@
 
     # Development Tools
     ./configs/neovim
-    ./configs/wezterm
+    ./configs/foot
+    ./configs/zellij
 
     # CLI Tools & Other Utilities
     ./configs/gitui
