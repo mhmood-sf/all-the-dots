@@ -2,7 +2,8 @@
   # Other programs used/needed when running this WM configuration.
   imports = [
     # Custom gestures.
-    ../configs/touchegg
+    ../../configs/touchegg
+    ../../configs/flameshot
   ];
 
   config = {
