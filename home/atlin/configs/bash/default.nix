@@ -21,6 +21,12 @@
         # Enter a nix dev shell.
         function devshell() {
           # Enter shell.
+          if [ $# -ne 1 ]
+          then
+            echo "Usage: devshell <lang/runtime>"
+            exit
+          fi
+
           echo Entering $1 dev shell...
           nix develop /home/atlin/Source/nixos#$1
         }
