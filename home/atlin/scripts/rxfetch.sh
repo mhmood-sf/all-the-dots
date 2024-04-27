@@ -137,10 +137,10 @@ fi
 
 echo -e "               ${c1}os${c0}     $(get_distro_name) $(uname -m)"
 echo -e "               ${c2}ker${c0}    $(uname -r)"
-echo -e "     ${c3}•${c8}_${c3}•${c0}       ${c7}pkgs${c0}   $(get_package_info)"
-echo -e "     ${c8}${c0}${c9}  ${c0}${c8}|${c0}       ${c4}sh${c0}     ${SHELL##*/}"
-echo -e "    ${c8}/${c0}${c10} ${c0}${c8}'\'${c0}      ${c6}ram${c0}    $(get_mem)"
-echo -e "   ${c9} ${c0}${c8}\_;/${c0}${c9} ${c0}      ${c1}init${c0}   $(get_init)"
+echo -e "     ${c3}•${c8} ${c3}•${c0}       ${c7}pkgs${c0}   $(get_package_info)"
+echo -e "     ${c8}${c0}${c9}  ${c0}${c8} ${c0}       ${c4}sh${c0}     ${SHELL##*/}"
+echo -e "    ${c8} ${c0}${c10} ${c0}${c8}   ${c0}      ${c6}ram${c0}    $(get_mem)"
+echo -e "   ${c9} ${c0}${c8}    ${c0}${c9} ${c0}      ${c1}init${c0}   $(get_init)"
 
 if [ -n "$DISPLAY" ]; then
     echo -e "               ${c2}de/wm${c0}  $(get_de_wm)"
