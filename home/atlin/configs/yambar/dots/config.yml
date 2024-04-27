@@ -1,83 +1,74 @@
-# fonts we'll be re-using here and there
+# Fonts we'll be re-using here and there
 awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=14
-awesome_brands: &awesome_brands Font Awesome 6 Brands:pixelsize=16
 
-std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
+# Default background for active river tags
+bg_default: &bg_default {stack: [{background: {color: E5DBD1FF}}, {underline: {size: 4, color: 0C67A8FF}}]}
 
-# This is THE bar configuration
 bar:
-  height: 26
-  location: bottom
-  spacing: 5
-  margin: 7
+  height: 30
+  location: top
+  spacing: 7
+  margin: 10
 
   # Default font
-  font: Open Sans:pixelsize=12
+  font: Google Sans:pixelsize=15:weight=120
 
-  foreground: ffffffff
-  background: 111111cc
-
-  border:
-    width: 1
-    color: 999999cc
-    margin: 5
-    top-margin: 0
+  foreground: 393263FF
+  background: E5DBD1FF
 
   left:
-    - foreign-toplevel:
-        content:
-          map:
-            conditions:
-              ~activated: {empty: {}}
-              activated:
-                - string: {text: "{app-id}", foreground: ffa0a0ff}
-                - string: {text: ": {title}"}
-  right:
-    - removables:
+    - river:
         anchors:
-          drive: &drive { text: , font: *awesome}
-          optical: &optical {text: , font: *awesome}
-        spacing: 5
+          - base: &river_base
+              left-margin: 10
+              right-margin: 13
+              default: {string: {text: , font: *awesome}}
+              conditions:
+                id == 1: {string: {text: , font: *awesome}}
+                id == 2: {string: {text: , font: *awesome}}
+                id == 3: {string: {text: , font: *awesome}}
+                id == 4: {string: {text: , font: *awesome}}
+                id == 5: {string: {text: , font: *awesome}}
         content:
           map:
             conditions:
-              ~mounted:
+              state == urgent:
                 map:
-                  on-click: udisksctl mount -b {device}
-                  conditions:
-                    ~optical: [{string: *drive}, {string: {text: "{label}"}}]
-                    optical: [{string: *optical}, {string: {text: "{label}"}}]
-              mounted:
+                  <<: *river_base
+                  deco: {background: {color: E9214FFF}}
+              state == focused:
                 map:
-                  on-click: udisksctl unmount -b {device}
-                  conditions:
-                    ~optical:
-                      - string: {<<: *drive, deco: *std_underline}
-                      - string: {text: "{label}"}
-                    optical:
-                      - string: {<<: *optical, deco: *std_underline}
-                      - string: {text: "{label}"}
-    - network:
+                  <<: *river_base
+                  deco: *bg_default
+              state == visible && ~occupied:
+                map:
+                  <<: *river_base
+              state == visible && occupied:
+                map:
+                  <<: *river_base
+                  deco: *bg_default
+              state == unfocused:
+                map:
+                  <<: *river_base
+              state == invisible && ~occupied: {empty: {}}
+              state == invisible && occupied:
+                map:
+                  <<: *river_base
+                  deco: {underline: {size: 4, color: BBAFB5FF}}
+  center:
+    - clock:
+        time-format: "%H:%M %Z"
         content:
-          map:
-            default: {empty: {}}
-            conditions:
-              name == wlo1:
-                map:
-                  conditions:
-                    ~carrier: {empty: {}}
-                    carrier:
-                      map:
-                        default: {string: {text: , font: *awesome, foreground: ffffff66}}
-                        conditions:
-                          state == up && ipv4 != "": {string: {text: , font: *awesome}}
+          - string: {text: "{time}"}
+  right:
     - network:
+        name: wlo1
         poll-interval: 1000
         content:
           map:
             default: {empty: {}}
             conditions:
-              name == wlp2s0:
+              name == wlo1:
                 map:
                   default: {string: {text: , font: *awesome, foreground: ffffff66}}
                   conditions:
@@ -86,36 +77,14 @@ bar:
                       map:
                         default:
                           - string: {text: , font: *awesome}
-                          - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s"}
+                          - string: {text: " {ssid}"}
 
                         conditions:
                           ipv4 == "":
                             - string: {text: , font: *awesome, foreground: ffffff66}
-                            - string: {text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s", foreground: ffffff66}
-    - alsa:
-        card: hw:PCH
-        mixer: Master
-        content:
-          map:
-            conditions:
-              ~online: {string: {text: , font: *awesome, foreground: ff0000ff}}
-              online:
-                map:
-                  on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
-                  conditions:
-                    muted: {string: {text: , font: *awesome, foreground: ffffff66}}
-                    ~muted:
-                      ramp:
-                        tag: percent
-                        items:
-                          - string: {text: , font: *awesome}
-                          - string: {text: , font: *awesome}
-                          - string: {text: , font: *awesome}
-    - backlight:
-        name: intel_backlight
-        content: [ string: {text: , font: *awesome}, string: {text: "{percent}%"}]
+                            - string: {text: " {ssid}", foreground: ffffff66}
     - battery:
-        name: BAT0
+        name: BAT1
         poll-interval: 30000
         anchors:
           discharging: &discharging
@@ -134,7 +103,7 @@ bar:
                       - string: {text: , font: *awesome}
                       - string: {text: , font: *awesome}
                       - string: {text: , foreground: 00ff00ff, font: *awesome}
-                - string: {text: "{capacity}% {estimate}"}
+                - string: {text: " {capacity}%"}
         content:
           map:
             conditions:
@@ -144,10 +113,10 @@ bar:
                 <<: *discharging
               state == charging:
                 - string: {text: , foreground: 00ff00ff, font: *awesome}
-                - string: {text: "{capacity}% {estimate}"}
+                - string: {text: " {capacity}%"}
               state == full:
                 - string: {text: , foreground: 00ff00ff, font: *awesome}
-                - string: {text: "{capacity}% full"}
+                - string: {text: " {capacity}%"}
               state == "not charging":
                 - ramp:
                     tag: capacity
@@ -162,14 +131,7 @@ bar:
                       - string: {text:  , foreground: 00ff00ff, font: *awesome}
                       - string: {text:  , foreground: 00ff00ff, font: *awesome}
                       - string: {text:  , foreground: 00ff00ff, font: *awesome}
-                - string: {text: "{capacity}%"}
-    - clock:
-        time-format: "%H:%M %Z"
-        content:
-          - string: {text: , font: *awesome}
-          - string: {text: "{date}", right-margin: 5}
-          - string: {text: , font: *awesome}
-          - string: {text: "{time}"}
+                - string: {text: " {capacity}%"}
     - label:
         content:
           string:

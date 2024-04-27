@@ -1,4 +1,7 @@
 { pkgs, ... }:
 {
-  # We don't need to do anything here. :|
+  programs.river = {
+    enable = true;
+    extraPackages = [];
+  };
 }
