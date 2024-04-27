@@ -121,18 +121,10 @@ get_de_wm() {
 
     # for non-EWMH WMs
     [ ! "$wm" ] || [ "$wm" = "LG3D" ] &&
-        wm=$(pgrep -m 1 -o \
-            -e "sway" \
-            -e "kiwmi" \
-            -e "wayfire" \
-            -e "sowm" \
-            -e "catwm" \
-            -e "fvwm" \
-            -e "dwm" \
-            -e "2bwm" \
-            -e "monsterwm" \
-            -e "tinywm" \
-            -e "xmonad")
+        wm=$(pgrep -l -x -o \
+            "sway|kiwmi|wayfire|sowm|catwm|fvwm|dwm|2bwm|monsterwm|tinywm|xmonad|river" \
+            | tail -n 1 \
+            | grep "\S*$" -o)
 
     echo "${wm:-unknown}"
 }
