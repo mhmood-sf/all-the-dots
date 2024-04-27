@@ -1,65 +1,39 @@
 #!/bin/sh
 
-# Super+Shift+Return to start an instance of wezterm
-riverctl map normal Super+Shift Return spawn wezterm
+# Super+Shift+Return to start an instance of foot
+riverctl map normal Super Return spawn foot
 
 # Open the browser
-riverctl map normal Super+Shift b spawn firefox
+riverctl map normal Super b spawn firefox
 
 # Launcher
-riverctl map normal Super Space spawn 'tofi-drun --drun-launch=true'
+riverctl map normal Super Space spawn 'tofi-run | $SHELL'
 
-# Screenshot
-riverctl map normal Super+Shift s spawn 'wayshot -s "$(slurp)" --stdout | wl-copy'
+# Screenshot (see XKB Keysym names for key symbol names)
+riverctl map normal None 3270_PrintScreen spawn 'wayshot -s $(slurp) --stdout | wl-copy'
 
-# Super+Q to close the focused view
-riverctl map normal Super Q close
+# Close the window
+riverctl map normal Super+Shift Q close
 
-# Super+Shift+E to exit river
-riverctl map normal Super+Shift E exit
+# Switch focused window
+riverctl map normal Super w focus-view next
+riverctl map normal Super s focus-view previous
 
-# Super+J and Super+K to focus the next/previous view in the layout stack
-riverctl map normal Super J focus-view next
-riverctl map normal Super K focus-view previous
-
-# Super+Shift+J and Super+Shift+K to swap the focused view with the next/previous
-# view in the layout stack
-riverctl map normal Super+Shift J swap next
-riverctl map normal Super+Shift K swap previous
-
-# Super+Return to bump the focused view to the top of the layout stack
-riverctl map normal Super Return zoom
-
-# Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
-riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
-
-# Super+Alt+{H,J,K,L} to move views
-riverctl map normal Super+Alt H move left 100
-riverctl map normal Super+Alt J move down 100
-riverctl map normal Super+Alt K move up 100
-riverctl map normal Super+Alt L move right 100
-
-# Super+Alt+Control+{H,J,K,L} to snap views to screen edges
-riverctl map normal Super+Alt+Control H snap left
-riverctl map normal Super+Alt+Control J snap down
-riverctl map normal Super+Alt+Control K snap up
-riverctl map normal Super+Alt+Control L snap right
+# Swap the focused view with the next/previous view in the layout stack
+riverctl map normal Super+Shift w swap next
+riverctl map normal Super+Shift s swap previous
 
 # Super+Alt+Shift+{H,J,K,L} to resize views
-riverctl map normal Super+Alt+Shift H resize horizontal -100
-riverctl map normal Super+Alt+Shift J resize vertical 100
-riverctl map normal Super+Alt+Shift K resize vertical -100
-riverctl map normal Super+Alt+Shift L resize horizontal 100
+riverctl map normal Super+Shift H resize horizontal -100
+riverctl map normal Super+Shift J resize vertical 100
+riverctl map normal Super+Shift K resize vertical -100
+riverctl map normal Super+Shift L resize horizontal 100
 
 # Super + Left Mouse Button to move views
 riverctl map-pointer normal Super BTN_LEFT move-view
 
 # Super + Right Mouse Button to resize views
 riverctl map-pointer normal Super BTN_RIGHT resize-view
-
-# Super + Middle Mouse Button to toggle float
-riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
 for i in $(seq 1 9)
 do
@@ -100,17 +74,11 @@ riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
 # not have a modifier
 for mode in normal locked
 do
-    # Eject the optical drive (well if you still have one that is)
-    riverctl map $mode None XF86Eject spawn 'eject -T'
-
-    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
     riverctl map $mode None XF86AudioRaiseVolume  spawn 'amixer set Master 5%+'
     riverctl map $mode None XF86AudioLowerVolume  spawn 'amixer set Master 5%-'
     riverctl map $mode None XF86AudioMute         spawn 'amixer set Master toggle'
 
-    # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+    # TODO: Brightness.
 done
 
 # Set background and border color
@@ -131,6 +99,9 @@ riverctl input pointer-1739-52632-MSFT0004:00_06CB:CD98_Touchpad tap enabled
 riverctl input pointer-1739-52632-MSFT0004:00_06CB:CD98_Touchpad natural-scroll enabled
 riverctl input pointer-1739-52632-MSFT0004:00_06CB:CD98_Touchpad drag enabled
 
+# Focus follows cursor
+riverctl focus-follows-cursor normal
+
 # Start notification daemon
 riverctl spawn mako
 
@@ -138,4 +109,7 @@ riverctl spawn mako
 riverctl spawn yambar
 
 # Set up wallpaper
-wbg ~/.wallpaper.png
+riverctl spawn "wbg ~/.wallpaper.png"
+
+# Night light
+riverctl spawn "wlsunset -l 43.65 -L 79.38 -t 5800 -T 6000"

@@ -25,19 +25,6 @@
       source = ./dots/.wallpaper.png;
     };
 
-    # Always use night mode, through wlsunset.
-    services.wlsunset = {
-      enable = true;
-      gamma = "0.5";
-      # Toronto
-      latitude = "43.65";
-      longitude = "79.38";
-      temperature = {
-        day = 4000;
-        night = 4000;
-      };
-    };
-
     # Other packages needed under this DE.
     home.packages = with pkgs; [
       # Launcher (remove after updating HM and using it's enable option).
@@ -47,8 +34,9 @@
       wayshot
       slurp
 
-      # Brightness / backlight
+      # Brightness / backlight / night light
       light
+      wlsunset
 
       # Wallpaper
       wbg
@@ -63,6 +51,9 @@
 
       # Send custom notifications
       libnotify
+
+      # File Explorer
+      xfce.thunar
 
       # Clipboard for Wayland
       wl-clipboard
