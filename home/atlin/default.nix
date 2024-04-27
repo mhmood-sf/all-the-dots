@@ -40,7 +40,7 @@
     # Development Tools
     ./configs/neovim
     ./configs/foot
-    ./configs/zellij
+    ./configs/tmux
 
     # CLI Tools & Other Utilities
     ./configs/gitui
