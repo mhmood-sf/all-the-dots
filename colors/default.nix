@@ -1,0 +1,35 @@
+rec {
+  # Just change the filename to choose a different colorscheme.
+  # And then light/dark/whatever variant is available for the palette.
+  colorscheme = import ./lazyfox;
+  palette = colorscheme.light;
+
+  # Shades
+  bg-primary   = palette.shade0;
+  bg-secondary = palette.shade1;
+  fg-primary   = palette.shade7;
+  fg-secondary = palette.shade6;
+
+  # Base
+  red     = palette.accent0;
+  orange  = palette.accent1;
+  yellow  = palette.accent2;
+  green   = palette.accent3;
+  cyan    = palette.accent4;
+  blue    = palette.accent5;
+  pink    = palette.accent6;
+  magenta = palette.accent7;
+
+  # Brights
+  brightred     = palette.bright0;
+  brightorange  = palette.bright1;
+  brightyellow  = palette.bright2;
+  brightgreen   = palette.bright3;
+  brightcyan    = palette.bright4;
+  brightblue    = palette.bright5;
+  brightpink    = palette.bright6;
+  brightmagenta = palette.bright7;
+
+  # Main theme accent
+  accent-primary = brightmagenta;
+}
