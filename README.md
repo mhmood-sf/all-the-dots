@@ -12,9 +12,7 @@ My current setup consists of:
 
 TODO:
 - [ ] Set up waylock properly.
-- [ ] Centralize theming through nix (pass the colorscheme as a module argument).
 - [ ] Gestures for river/wayland
 - [ ] Consistent bindings across DE/WMs (in particular, update river bindings to be more consistent with awesomewm bindings).
-- [ ] Set up cursor theme
-- [ ] Improve notifications
-- [ ] Fix night mode / gamma control.
+- [ ] Take advantage of tofi! Set up custom menus for actions.
+- [ ] Take advantage of river's modal window management.
