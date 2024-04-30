@@ -84,7 +84,6 @@
     unzip
     ghostscript
     monolith
-    bluez
   ];
 
   # List of permitted insecure packages
