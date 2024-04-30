@@ -1,12 +1,11 @@
 { pkgs, ... }:
 {
-  # Other packages needed with this DE (enabled through HM).
+  # Other packages needed with this DE.
   imports = [
     # Notifications
     ../../configs/mako
 
-    # Launcher (currently just the config, since there's no HM
-    # option to enable it).
+    # Launcher.
     ../../configs/tofi
 
     # Bar config
@@ -25,11 +24,9 @@
       source = ./dots/.wallpaper.png;
     };
 
-    # Other packages needed under this DE.
+    # Other packages needed under this DE, that don't need configuration
+    # and don't have HM options available.
     home.packages = with pkgs; [
-      # Launcher (remove after updating HM and using it's enable option).
-      tofi
-
       # Screenshots
       wayshot
       slurp
@@ -46,13 +43,10 @@
       # Screenlock
       waylock
 
-      # Bar
-      yambar
-
       # Send custom notifications
       libnotify
 
-      # File Explorer
+      # GUI File Explorer
       xfce.thunar
 
       # Clipboard for Wayland
