@@ -1,6 +1,9 @@
 {
   # Dark variant
   dark = {
+    # Obviously.
+    isDark = true;
+
     # Shades
     shade0  = "#17171C";
     shade1  = "#222430";
@@ -35,6 +38,9 @@
 
   # Light variant
   light = {
+    # Obviously.
+    isDark = false;
+
     # Shades
     shade0  = "#F2F4F7";
     shade1  = "#E2E6F7";

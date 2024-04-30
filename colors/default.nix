@@ -1,10 +1,8 @@
 rec {
   # Just change the filename to choose a different colorscheme.
   # And then light/dark/whatever variant is available for the palette.
-  colorscheme = import ./aks;
-  palette = colorscheme.dark;
-  # Also set this, or manually set the black/white colors.
-  isDark = true;
+  colorscheme = import ./lazyfox;
+  palette = colorscheme.light;
 
   # Shades
   bg-primary   = palette.shade0;
@@ -13,8 +11,8 @@ rec {
   fg-secondary = palette.shade6;
 
   # Black/White
-  black = if isDark then palette.shade0 else palette.shade7;
-  white = if isDark then palette.shade7 else palette.shade0;
+  black = if palette.isDark then palette.shade0 else palette.shade7;
+  white = if palette.isDark then palette.shade7 else palette.shade0;
 
   # Base
   red     = palette.accent0;
@@ -27,8 +25,8 @@ rec {
   magenta = palette.accent7;
 
   # Bright Black/White
-  brightblack = if isDark then palette.shade1 else palette.shade6;
-  brightwhite = if isDark then palette.shade6 else palette.shade1;
+  brightblack = if palette.isDark then palette.shade1 else palette.shade6;
+  brightwhite = if palette.isDark then palette.shade6 else palette.shade1;
 
   # Brights
   brightred     = palette.bright0;

@@ -1,6 +1,9 @@
 {
-  # Only light variant, no dark variant for lazyfox.
+  # Only one variant for lazyfox.
   light = {
+    # Obviously not dark
+    isDark = false;
+
     # Shades
     shade0  = "#F6F2EE";
     shade1  = "#EBE5DF";

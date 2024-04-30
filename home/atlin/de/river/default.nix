@@ -21,7 +21,7 @@
 
     # Set the wallpaper in the home directory.
     home.file.".wallpaper.png" = {
-      source = if colors.isDark then ./dots/wallpaper-light.png else ./dots/wallpaper-dark.png;
+      source = if colors.palette.isDark then ./dots/wallpaper-dark.png else ./dots/wallpaper-light.png;
     };
 
     # Other packages needed under this DE, that don't need configuration
