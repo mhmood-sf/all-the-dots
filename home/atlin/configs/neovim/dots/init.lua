@@ -21,7 +21,7 @@ vim.o.title = false   -- title: Don't set terminal title.
 vim.o.wrap  = false   -- wrap: Dont wrap lines.
 
 vim.o.so    = 9       -- scrolloff: 9 lines scroll offset.
-vim.o.ls    = 2       -- laststatus: Always show one statusline.
+vim.o.ls    = 1       -- laststatus: Always show one statusline.
 vim.o.sts   = 4       -- softtabstop: 4 spaces as one tab.
 vim.o.ts    = 4       -- tabstop: Number of cols in one tab char.
 vim.o.sw    = 4       -- shiftwidth: Autoindent width.
@@ -91,4 +91,10 @@ require "jet-config"
 
 --[ Mini-Plugins ]--
 require("utils.pair").create { "()", "{}", "[]", "\"\"" }
-require("utils.stline")
+
+--[ Set the default status line's color ]--
+local hi = require(vim.g.colors_name).hi
+local color = require(vim.g.colors_name).colors
+
+hi("StatusLine",   { fg = color.shade7, bg = color.shade2 })
+hi("StatusLineNC", { fg = color.shade3, bg = color.shade2 })
