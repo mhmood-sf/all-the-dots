@@ -22,19 +22,27 @@
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
       hm = home-manager;
+      colors = import ./colors;
     in {
     # Used with `nixos-rebuild --flake .#<hostname>`
     nixosConfigurations = {
       snowman-ms = nixpkgs.lib.nixosSystem {
         modules = [
+          # Host configuration
           ./host/snowman-ms
 
-          hm.nixosModules.home-manager {
+          # Home-manager module
+          hm.nixosModules.home-manager
+
+          # Home-manager configuration
+          {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               users.atlin = ./home/atlin;
               users.guest = ./home/guest;
+              # Pass colors
+              extraSpecialArgs = { inherit colors; };
             };
           }
         ];
