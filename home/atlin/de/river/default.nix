@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colors, ... }:
 {
   # Other packages needed with this DE.
   imports = [
@@ -21,7 +21,7 @@
 
     # Set the wallpaper in the home directory.
     home.file.".wallpaper.png" = {
-      source = ./dots/.wallpaper.png;
+      source = if colors.isDark then ./dots/wallpaper-light.png else ./dots/wallpaper-dark.png;
     };
 
     # Other packages needed under this DE, that don't need configuration
