@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, colors, ... }:
 {
   programs.home-manager.enable = true;
 
@@ -48,6 +48,7 @@
     ./configs/htop
     ./configs/eza
     ./configs/bat
+    ./configs/glow
 
     # Viewing files (PDFs, images, file explorers etc.)
     ./configs/feh
@@ -60,7 +61,8 @@
     ./configs/bash
   ];
 
-  # Other packages (fonts, other stuff)
+  # Other packages that don't really need any configuration, and
+  # don't have HM options either.
   home.packages = with pkgs; [
     # Work / Everyday GUI Applications
     zoom-us
@@ -76,17 +78,12 @@
     font-awesome
 
     # CLI Tools & Other Utilities
-    fd
     slides
     qrcp
     imagemagick
-    glow
     unzip
     ghostscript
     monolith
-
-    # Misc.
-    ibus # Emojis. TODO: Does this even work properly on wayland?
   ];
 
   # List of permitted insecure packages

@@ -1,11 +1,12 @@
+{ colors, ... }:
 {
   config = {
     services.mako = {
       enable = true;
       anchor = "top-right";
-      textColor = "#E5DBD1";
-      backgroundColor = "#393263";
-      progressColor = "#0C67A8";
+      textColor = colors.bg-primary;
+      backgroundColor = colors.fg-primary;
+      progressColor = colors.accent-primary;
       borderRadius = 7;
       borderSize = 0;
       font = "Google Sans 11";

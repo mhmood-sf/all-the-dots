@@ -1,30 +1,28 @@
+{ colors, ... }:
 {
   config = {
     programs.zathura = {
       enable = true;
-
-      # Options, mostly colors.
       options = {
-        # TODO: Proper colorscheme taken as input.
-        default-fg              = "#4D4872";
-        default-bg              = "#EBE5DF";
-        completion-fg           = "#4D4872";
-        completion-bg           = "#EBE5DF";
-        completion-highlight-fg = "#0C67A8";
-        completion-highlight-bg = "#E5DBD1";
-        completion-group-fg     = "#4D4872";
-        completion-group-bg     = "#EBE5DF";
-        statusbar-fg            = "#4D4872";
-        statusbar-bg            = "#EBE5DF";
-        inputbar-fg             = "#4D4872";
-        inputbar-bg             = "#EBE5DF";
-        recolor-lightcolor      = "#F6F2EE";
-        recolor-darkcolor       = "#575279";
+        default-fg              = colors.fg-primary;
+        default-bg              = colors.bg-primary;
+        completion-fg           = colors.fg-secondary;
+        completion-bg           = colors.bg-secondary;
+        completion-highlight-fg = colors.accent-primary;
+        completion-highlight-bg = colors.bg-secondary;
+        completion-group-fg     = colors.fg-secondary;
+        completion-group-bg     = colors.bg-secondary;
+        statusbar-fg            = colors.fg-secondary;
+        statusbar-bg            = colors.bg-secondary;
+        inputbar-fg             = colors.fg-secondary;
+        inputbar-bg             = colors.bg-secondary;
+        recolor-lightcolor      = colors.white;
+        recolor-darkcolor       = colors.black;
       };
 
       extraConfig = ''
       set smooth-scroll "true"
-      set font "Open Sans 11"
+      set font "Google Sans 11"
 
       set recolor true
       '';
