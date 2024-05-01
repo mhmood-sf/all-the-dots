@@ -23,14 +23,14 @@
     accent6 = "#EC3484";
     accent7 = "#9335C6";
     # Brighter Accents
-    bright0 = "#E9214F";
-    bright1 = "#E79925";
-    bright2 = "#DDC805";
-    bright3 = "#07B34C";
-    bright4 = "#16A0BE";
-    bright5 = "#0C67A8";
-    bright6 = "#EC3484";
-    bright7 = "#9335C6";
+    bright0 = "#F93D69";
+    bright1 = "#F2AB40";
+    bright2 = "#F7E225";
+    bright3 = "#06DF5D";
+    bright4 = "#0DBAE0";
+    bright5 = "#0784DE";
+    bright6 = "#FF0097";
+    bright7 = "#AD4EDF";
     # Auxiliary colors
     aux0    = "#BEDEDE";
     aux1    = "#E5D3DB";
