@@ -16,3 +16,4 @@ TODO:
 - [ ] Consistent bindings across DE/WMs (in particular, update river bindings to be more consistent with awesomewm bindings).
 - [ ] Take advantage of tofi! Set up custom menus for actions.
 - [ ] Take advantage of river's modal window management.
+- [ ] Fix up `sysinfo.sh` (or re-do it completely?). WiFi fails when SSID has spaces in it.

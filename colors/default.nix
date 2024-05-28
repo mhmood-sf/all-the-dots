@@ -6,8 +6,8 @@ rec {
 
   # Shades
   bg-primary   = palette.shade0;
-  bg-secondary = palette.shade1;
   fg-primary   = palette.shade7;
+  bg-secondary = palette.shade1;
   fg-secondary = palette.shade6;
 
   # Black/White

@@ -2,16 +2,7 @@
 # TODO: for clearing all bindings. Then set your own.
 
 { colors, ... }:
-let
-  # Colors stuff
-  palette = colors.palette;
-
-  # Bash commands
-  username = "whoami";
-  time     = "date +%H:%M";
-  battery  = "acpi | grep '\\d+%' -o";
-  wifi     = "case $(nmcli | head -n 1 | grep ' connected ') in connected) echo $(nmcli | head -n 1 | grep '\\S+$' -o) ;; *) echo '-/-' ;; esac";
-in {
+{
   config = {
     programs.tmux = {
       enable = true;
@@ -31,8 +22,12 @@ in {
       # Increase the left/right lengths so we can display all the information properly.
       set-option -g status-left-length 20
       set-option -g status-left-length 30
-      set-option -g status-left "#[bg=${colors.fg-primary},fg=${colors.bg-primary}]  #(${username}) #[bg=${colors.fg-secondary},fg=${colors.bg-secondary}] #(${time}) #[bg=default,fg=default]"
-      set-option -g status-right "#[bg=${colors.fg-secondary},fg=${colors.bg-secondary}]  #(${battery}) #[bg=${colors.fg-primary},fg=${colors.bg-primary}]   #(${wifi})"
+
+      set-option -g status-justify centre
+
+      # Status lines
+      set-option -g status-left "#[bg=${colors.fg-primary},fg=${colors.bg-primary}]  #(whoami) #[bg=${colors.fg-secondary},fg=${colors.bg-secondary}] #(sysinfo.sh date), #(sysinfo.sh time) #[bg=default,fg=default]"
+      set-option -g status-right "#[bg=${colors.fg-secondary},fg=${colors.bg-secondary}] #(sysinfo.sh bat) #[bg=${colors.fg-primary},fg=${colors.bg-primary}] #(sysinfo.sh wifi) "
       '';
     };
   };

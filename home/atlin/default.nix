@@ -31,7 +31,7 @@
   # in `home.packages`.
   imports = [
     # Window Manager / Desktop Environment
-    ./de/river
+    ./de/gnome
 
     # Work / Everyday GUI Applications
     ./configs/firefox
@@ -41,6 +41,7 @@
     ./configs/neovim
     ./configs/foot
     ./configs/tmux
+    ./configs/vscode
 
     # CLI Tools & Other Utilities
     ./configs/gitui

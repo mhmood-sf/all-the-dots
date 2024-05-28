@@ -10,7 +10,7 @@ riverctl map normal Super b spawn firefox
 riverctl map normal Super Space spawn 'tofi-run | $SHELL'
 
 # Screenshot (see XKB Keysym names for key symbol names)
-riverctl map normal None 3270_PrintScreen spawn 'wayshot -s $(slurp) --stdout | wl-copy'
+riverctl map normal Super+Shift s spawn 'wayshot -s "$(slurp)" --stdout | wl-copy'
 
 # Close the window
 riverctl map normal Super+Shift Q close
