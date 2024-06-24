@@ -24,11 +24,10 @@
           if [ $# -ne 1 ]
           then
             echo "Usage: devshell <lang/runtime>"
-            exit
+          else
+            echo Entering $1 dev shell...
+            nix develop /home/atlin/Source/nixos#$1
           fi
-
-          echo Entering $1 dev shell...
-          nix develop /home/atlin/Source/nixos#$1
         }
 
         # Add ~/bin to PATH
