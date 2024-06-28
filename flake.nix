@@ -50,6 +50,6 @@
     };
 
     # Used with `nix develop <flake>#<lang>`
-    devShells.${system} = import ./shells { inherit pkgs; };
+    devShells.${system} = import ./shells { inherit pkgs pkgs-unstable; };
   };
 }

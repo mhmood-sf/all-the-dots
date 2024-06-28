@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, pkgs-unstable }:
 rec {
   # Languages & Runtimes.
   c       = pkgs.callPackage ./c.nix { };
@@ -10,6 +10,9 @@ rec {
   sml     = pkgs.callPackage ./sml.nix { };
   tex     = pkgs.callPackage ./tex.nix { };
 
-  # Testing Purposes.
+  # Unstable version (for the latest packages)
+  lean-unstable    = pkgs-unstable.callPackage ./lean.nix { };
+
+  # For testing Purposes.
   default = hello;
 }
