@@ -1,12 +1,16 @@
 { pkgs, ... }:
 {
-  # Enable the X11 windowing system.
+  # Enable the X11 windowing system (except not
+  # really, it's actually just to enable GNOME,
+  # which then uses wayland under the hood).
   services.xserver = {
     enable = true;
 
-    # Configure keymap in X11
-    layout = "us";
-    xkbVariant = "";
+    # Configure XKB
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
 
     displayManager.gdm = {
       enable = true;
