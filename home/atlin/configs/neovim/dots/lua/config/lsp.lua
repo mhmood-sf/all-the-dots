@@ -39,7 +39,7 @@ nnoremap <leader>r <CMD>lua vim.lsp.buf.references()<Enter>
 ]]
 
 -- Lua
-local lua_ls = vim.fn.stdpath('data') .. "/mason/bin/lua-language-server"
+local lua_ls = "lua-language-server"
 local lua_runtime  = vim.split(package.path, ";")
 table.insert(lua_runtime, "lua/?.lua")
 table.insert(lua_runtime, "lua/?/init.lua")
@@ -57,8 +57,8 @@ lspcfg.lua_ls.setup {
         local path = client.workspace_folders[1].name
         if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
             client.config.settings = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
                 runtime = {
-                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
                     version = 'LuaJIT'
                 },
                 -- Make the server aware of Neovim runtime files
@@ -73,14 +73,5 @@ lspcfg.lua_ls.setup {
     end
 }
 
--- Deno
-local HOME = os.getenv("HOME")
-local deno_bin = HOME .. "/.deno/bin/deno"
-lspcfg.denols.setup {
-    cmd = {deno_bin, "lsp"}
-}
-
--- AST-Grep
-lspcfg.ast_grep.setup {
-    filetypes = { "c", "cpp", "rust", "java", "python", "html", "css" }
-}
+-- ClangD
+lspconfig.clangd.setup {}
