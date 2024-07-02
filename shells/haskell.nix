@@ -6,6 +6,10 @@
 }:
 
 mkShell {
+  shellHook = ''
+  echo Entering Nix DevShell (lang: Haskell)
+  '';
+
   packages = [
     ghc
     cabal-install

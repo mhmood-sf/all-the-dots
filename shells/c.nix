@@ -10,6 +10,10 @@
 }:
 
 mkShell {
+  shellHook = ''
+  echo Entering Nix DevShell (lang: C)
+  '';
+
   packages = [
     libgcc
     gcc

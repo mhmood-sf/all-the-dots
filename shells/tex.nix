@@ -4,6 +4,10 @@
 }:
 
 mkShell {
+  shellHook = ''
+  echo Entering Nix DevShell (lang: Teχ)
+  '';
+
   packages = [
     (texliveSmall.withPackages (ps: with ps; [
       newpx
