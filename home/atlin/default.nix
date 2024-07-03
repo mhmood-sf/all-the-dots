@@ -85,6 +85,11 @@
     unzip
     ghostscript
     monolith
+
+    # Install language servers for Lua and Nix here
+    # (instead of using shells, which is a bit annoying).
+    lua-language-server
+    nil
   ];
 
   # List of permitted insecure packages

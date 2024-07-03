@@ -1,5 +1,4 @@
 local fn  = vim.fn
-local cmd = vim.cmd
 local map = vim.api.nvim_set_keymap
 
 --[ Editor options ]--
@@ -84,10 +83,16 @@ map("n", "<C-j>", "<CMD>split<CR><C-w>j", opts)
 -- <Esc> to clear search highlighting
 map("n", "<Esc>", "<CMD>nohlsearch|diffupdate<CR><C-L>", opts)
 
---[ Plugins ]--
--- We load these near the end, so that any plugin-related global variables are
--- defined before the plugins are loaded.
-require "jet-config"
+--[ Plugins & Colorscheme ]--
+vim.cmd "colorscheme lazyfox"
+
+require "config.treesitter"
+require "config.lsp"
+require "config.telescope"
+require "config.ufo"
+require "config.trouble"
+require "config.gitsigns"
+require "config.cmp"
 
 --[ Mini-Plugins ]--
 require("utils.pair").create { "()", "{}", "[]", "\"\"" }
