@@ -25,8 +25,7 @@
           then
             echo "Usage: devshell <lang/runtime>"
           else
-            echo Entering $1 dev shell...
-            nix develop /home/atlin/Source/nixos#$1
+            nix develop /home/atlin/Source/NixOS#$1
           fi
         }
 
