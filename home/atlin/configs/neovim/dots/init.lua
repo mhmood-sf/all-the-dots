@@ -20,7 +20,7 @@ vim.o.title = false   -- title: Don't set terminal title.
 vim.o.wrap  = false   -- wrap: Dont wrap lines.
 
 vim.o.so    = 9       -- scrolloff: 9 lines scroll offset.
-vim.o.ls    = 1       -- laststatus: Always show one statusline.
+vim.o.ls    = 2       -- laststatus: Always show one statusline.
 vim.o.sts   = 4       -- softtabstop: 4 spaces as one tab.
 vim.o.ts    = 4       -- tabstop: Number of cols in one tab char.
 vim.o.sw    = 4       -- shiftwidth: Autoindent width.
@@ -74,7 +74,7 @@ map("n", "<S-l>", "$zz",    opts)
 map("n", "<S-j>", "<C-d>M", opts)
 map("n", "<S-k>", "<C-u>M", opts)
 
--- <C-hjkl> for splits!
+-- <C-hjkl> for splits
 map("n", "<C-h>", "<CMD>vsplit<CR>", opts)
 map("n", "<C-k>", "<CMD>split<CR>", opts)
 map("n", "<C-l>", "<CMD>vsplit<CR><C-w>l", opts)
@@ -86,18 +86,11 @@ map("n", "<Esc>", "<CMD>nohlsearch|diffupdate<CR><C-L>", opts)
 --[ Plugins & Colorscheme ]--
 vim.cmd "colorscheme lazyfox"
 
-require "config.treesitter"
-require "config.lsp"
-require "config.telescope"
 require "config.gitsigns"
+require "config.lualine"
+require "config.autopairs"
 require "config.cmp"
-
---[ Mini-Plugins ]--
-require("utils.pair").create { "()", "{}", "[]", "\"\"" }
-
---[ Set the default status line's color ]--
-local hi = require(vim.g.colors_name).hi
-local color = require(vim.g.colors_name).colors
-
-hi("StatusLine",   { fg = color.shade7, bg = color.shade2 })
-hi("StatusLineNC", { fg = color.shade3, bg = color.shade2 })
+require "config.lsp"
+require "config.snippets"
+require "config.telescope"
+require "config.treesitter"

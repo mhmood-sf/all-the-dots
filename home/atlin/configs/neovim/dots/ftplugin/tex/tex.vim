@@ -96,7 +96,7 @@ function! s:printFormatted(output) abort
     call filter(a:output,
         \ {idx, val ->
         \ match(val, "!") == 0 ||
-        \ match(val, 'l\.') == 0 })
+        \ match(val, "l\.") == 0 })
 
     if len(a:output) <= 0
         echo "Finished compiling."
@@ -146,11 +146,11 @@ function! s:preview() range
         call add(l:src, getline(line))
     endfor
 
-    let l:raw = ['\documentclass{article}']
+    let l:raw = ["\documentclass{article}"]
     call extend(l:raw, l:preamble)
-    call extend(l:raw, ['\begin{document}'])
+    call extend(l:raw, ["\begin{document}"])
     call extend(l:raw, l:src)
-    call extend(l:raw, ['\end{document}'])
+    call extend(l:raw, ["\end{document}"])
 
     let l:file = s:get_tmpfile()
     call writefile(l:raw, l:file)

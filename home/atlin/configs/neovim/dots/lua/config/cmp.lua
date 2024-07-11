@@ -1,13 +1,19 @@
 local cmp = require("cmp")
 
 cmp.setup {
+    snippet = {
+        expand = function(args)
+            vim.snippet.expand(args.body)
+        end
+    },
+
     sources = {
         { name = "nvim_lsp" },
         { name = "buffer" }
     },
 
     mapping = {
-        ['<CR>'] = function(fallback)
+        ["<CR>"] = function(fallback)
             if cmp.visible() then
                 cmp.confirm()
             else
@@ -15,9 +21,17 @@ cmp.setup {
             end
         end,
 
-        ['<Tab>'] = function(fallback)
+        ["<Tab>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            else
+                fallback()
+            end
+        end,
+
+        ["<S-Tab>"] = function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
             else
                 fallback()
             end

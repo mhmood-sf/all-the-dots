@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 let
   # My colorscheme plugins
   aks-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -24,16 +24,29 @@ in
   config = {
     programs.neovim = {
       enable = true;
+      # TODO: Return to stable on next release.
+      package = pkgs-unstable.neovim;
       defaultEditor = true;
       withRuby = false;
       withPython3 = false;
       withNodeJs = false;
 
       plugins = with pkgs.vimPlugins; [
-        # LSP + Treesitter
+        aks-nvim
+        cmp-nvim-lsp
+        cmp-buffer
+        gitsigns-nvim
+        lazyfox-nvim
+        lualine-nvim
+        nvim-autopairs
+        nvim-cmp
         nvim-lspconfig
+        # TODO: Return to stable on next release.
+        pkgs-unstable.vimPlugins.nvim-snippets
+        plenary-nvim
+        telescope-nvim
+
         (nvim-treesitter.withPlugins (p: [
-          # TS Parsers
           p.zig
           p.zathurarc
           p.yaml
@@ -70,24 +83,6 @@ in
           p.c
           p.bash
         ]))
-
-        # Completion
-        nvim-cmp
-        cmp-nvim-lsp
-        cmp-buffer
-
-        # Fuzzy Finder / Search UI
-        telescope-nvim
-
-        # Git Decorations
-        gitsigns-nvim
-
-        # Colorschemes
-        aks-nvim
-        lazyfox-nvim
-
-        # Utilities / Dependencies
-        plenary-nvim
       ];
     };
 
