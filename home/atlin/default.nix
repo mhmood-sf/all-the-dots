@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, colors, ... }:
+{ pkgs, ... }:
 {
   programs.home-manager.enable = true;
 
@@ -69,6 +69,11 @@
     zoom-us
     obsidian
 
+    # Graphics / Design
+    gimp
+    inkscape
+    kdePackages.kdenlive
+
     # Fonts
     cascadia-code
     open-sans
@@ -87,7 +92,7 @@
     monolith
 
     # Install language servers for Lua and Nix here
-    # (instead of using shells, which is a bit annoying).
+    # (instead of in dev shells, which is a bit annoying).
     lua-language-server
     nil
   ];
