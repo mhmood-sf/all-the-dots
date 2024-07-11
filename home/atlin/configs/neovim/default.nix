@@ -24,8 +24,7 @@ in
   config = {
     programs.neovim = {
       enable = true;
-      # TODO: Return to stable on next release.
-      package = pkgs-unstable.neovim;
+      # package = pkgs-unstable.neovim;
       defaultEditor = true;
       withRuby = false;
       withPython3 = false;
@@ -42,7 +41,7 @@ in
         nvim-cmp
         nvim-lspconfig
         # TODO: Return to stable on next release.
-        pkgs-unstable.vimPlugins.nvim-snippets
+        # pkgs-unstable.vimPlugins.nvim-snippets
         plenary-nvim
         telescope-nvim
 
