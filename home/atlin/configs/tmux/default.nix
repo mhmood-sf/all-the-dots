@@ -1,5 +1,4 @@
-# TODO: See https://unix.stackexchange.com/questions/733478/how-to-remove-all-key-bindings-from-tmux-session
-# TODO: for clearing all bindings. Then set your own.
+# TODO: See https://hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
 
 { colors, ... }:
 {
