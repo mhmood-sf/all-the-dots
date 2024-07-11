@@ -11,7 +11,7 @@
 
 mkShell {
   shellHook = ''
-  echo Entering Nix DevShell (lang: C)
+  echo "Entering Nix DevShell (lang: C)"
   '';
 
   packages = [

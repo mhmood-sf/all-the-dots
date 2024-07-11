@@ -5,7 +5,7 @@
 
 mkShell {
   shellHook = ''
-  echo Entering Nix DevShell (lang: Standard ML)
+  echo "Entering Nix DevShell (lang: Standard ML)"
   '';
 
   packages = [

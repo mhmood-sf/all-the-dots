@@ -5,7 +5,7 @@
 
 mkShell {
   shellHook = ''
-  echo Entering Nix DevShell (lang: JavaScript, node.js)
+  echo "Entering Nix DevShell (lang: JavaScript, node.js)"
   '';
 
   packages = [
