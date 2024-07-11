@@ -42,7 +42,7 @@
               users.atlin = ./home/atlin;
               users.guest = ./home/guest;
               # Pass colors
-              extraSpecialArgs = { inherit colors; };
+              extraSpecialArgs = { inherit colors pkgs-unstable; };
             };
           }
         ];
