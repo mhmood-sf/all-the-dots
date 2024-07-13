@@ -1,4 +1,5 @@
 # TODO: See https://hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+# TODO: Padding for tmux windows? So I can remove padding from the terminal.
 
 { colors, ... }:
 {
