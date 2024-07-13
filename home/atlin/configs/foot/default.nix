@@ -9,13 +9,14 @@ in {
       enable = true;
       settings = {
         main = {
-          font = "Cascadia Code PL:size=10.5, Font Awesome 6 Free Solid:size=8, Material:size=9, Material Icons:size=9, monospace:size=10";
-          font-bold = "Cascadia Code PL:style=Bold:size=10.5, Font Awesome 6 Free Solid:size=8, Material:size=9, Material Icons:size=9, monospace:size=10";
-          font-italic = "Cascadia Code PL:style=Bold Italic:size=10.5, Font Awesome 6 Free Solid:size=8, Material:size=9, Material Icons:size=9, monospace:size=10";
-          font-bold-italic = "Cascadia Code PL:style=Italic:size=10.5, Font Awesome 6 Free Solid:size=8, Material:size=9, Material Icons:size=9, monospace:size=10";
-          pad = "7x7";
+          font = "Iosevka:style=Semibold:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
+          font-bold = "Iosevka:style=Bold:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
+          font-italic = "Iosevka:style=Italic:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
+          font-bold-italic = "Iosevka:style=Bold Italic:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
+          pad = "7x7 center";
           bold-text-in-bright = "palette-based";
-          line-height = "13";
+          underline-offset = "2px";
+          underline-thickness = "2px";
         };
 
         colors = {

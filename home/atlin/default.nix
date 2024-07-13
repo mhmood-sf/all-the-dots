@@ -76,6 +76,7 @@
 
     # Fonts
     cascadia-code
+    iosevka
     open-sans
     noto-fonts-color-emoji
     cm_unicode
