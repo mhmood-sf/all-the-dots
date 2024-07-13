@@ -88,11 +88,11 @@ map("n", "<Esc>", "<CMD>nohlsearch|diffupdate<CR><C-L>", opts)
 --[ Plugins & Colorscheme ]--
 vim.cmd "colorscheme lazyfox"
 
+require "config.statusline"
 require "config.gitsigns"
-require "config.lualine"
 require "config.autopairs"
 require "config.cmp"
 require "config.lsp"
--- require "config.snippets"
+-- require "config.snippets" -- TODO: Neovim v0.10.0
 require "config.telescope"
 require "config.treesitter"
