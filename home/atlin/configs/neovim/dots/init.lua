@@ -33,6 +33,8 @@ vim.o.spl   = "en_gb" -- spelllang: Set spelling language.
 vim.o.spk = "topline"
 -- wildmode: Bash-like tab completion.
 vim.o.wim = "longest,list"
+-- fillchars: Characters for window separators and special lines.
+vim.o.fcs = "vert:┃,horiz:━"
 -- undodir: Directory for the undofile
 vim.o.udir = fn.stdpath("data") .. "/undo/"
 

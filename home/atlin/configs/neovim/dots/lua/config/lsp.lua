@@ -12,9 +12,7 @@ local lspcfg = require "lspconfig"
 -- Add borders
 -- See: https://vi.stackexchange.com/a/39075
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover, {
-        border = "single"
-    }
+    vim.lsp.handlers.hover, { border = "single" }
 )
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
@@ -24,10 +22,11 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 )
 
 vim.diagnostic.config {
-  float = {
-      border = "single"
-  },
-  virtual_text = false
+    underline = false,
+    virtual_text = false,
+    float = {
+        border = "single"
+    },
 }
 
 --[ Mappings ]--
