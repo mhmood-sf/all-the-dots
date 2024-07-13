@@ -19,6 +19,15 @@ let
       hash = "sha256-luT2lhs2lTUjQikXDUQbkFofV0DVECSckDwKG8Ksxso=";
     };
   };
+  linecook-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "linecook-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "mhmood-sf";
+      repo = "linecook-nvim";
+      rev = "1eda405243e850f26b37fb95078a21e855679e37";
+      hash = "sha256-4gh7rTxht5LEyyaRun7XB6r6LIMJ62wFL2k8uS3XPds=";
+    };
+  };
 in
 {
   config = {
@@ -36,6 +45,7 @@ in
         cmp-buffer
         gitsigns-nvim
         lazyfox-nvim
+        linecook-nvim
         lualine-nvim
         nvim-autopairs
         nvim-cmp
