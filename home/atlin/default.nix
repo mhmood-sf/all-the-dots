@@ -38,18 +38,18 @@
     ./configs/thunderbird
 
     # Development Tools
-    ./configs/neovim
     ./configs/foot
+    ./configs/neovim
     ./configs/tmux
     ./configs/vscode
 
     # CLI Tools & Other Utilities
-    ./configs/gitui
-    ./configs/ripgrep
-    ./configs/htop
-    ./configs/eza
     ./configs/bat
-    ./configs/glow
+    ./configs/eza
+    ./configs/gitui
+    ./configs/htop
+    ./configs/ripgrep
+    ./configs/yazi
 
     # Viewing files (PDFs, images, file explorers etc.)
     ./configs/feh
@@ -66,8 +66,8 @@
   # don't have HM options either.
   home.packages = with pkgs; [
     # Work / Everyday GUI Applications
-    zoom-us
     obsidian
+    zoom-us
 
     # Graphics / Design
     gimp
@@ -76,21 +76,22 @@
 
     # Fonts
     cascadia-code
-    iosevka
-    open-sans
-    noto-fonts-color-emoji
     cm_unicode
-    lmmath
-    xits-math
     font-awesome
+    iosevka
+    lmmath
+    noto-fonts-color-emoji
+    open-sans
+    xits-math
 
     # CLI Tools & Other Utilities
-    slides
-    qrcp
-    imagemagick
-    unzip
     ghostscript
+    glow
+    imagemagick
     monolith
+    qrcp
+    slides
+    unzip
 
     # Install language servers for Lua and Nix here
     # (instead of in dev shells, which is a bit annoying).

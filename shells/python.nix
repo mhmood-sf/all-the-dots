@@ -5,7 +5,7 @@
 
 mkShell {
   shellHook = ''
-  echo "Entering Nix DevShell (lang: Python)"
+    echo "Entering Nix DevShell (lang: Python)"
   '';
 
   packages = [

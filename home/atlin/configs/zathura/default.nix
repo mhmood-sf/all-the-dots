@@ -21,10 +21,10 @@
       };
 
       extraConfig = ''
-      set smooth-scroll "true"
-      set font "Google Sans 11"
+        set smooth-scroll "true"
+        set font "Google Sans 11"
 
-      set recolor true
+        set recolor true
       '';
     };
   };
