@@ -1,7 +1,11 @@
 local cmp = require("cmp")
 
+local win_config = cmp.config.window.bordered()
+win_config.border = "solid"
+win_config.winhighlight = "FloatBorder:FloatBorder,CursorLine:Visual,Search:None"
+
 cmp.setup {
---[[
+--[[ TODO: Install snippet manager.
     snippet = {
         expand = function(args)
             vim.snippet.expand(args.body)
@@ -9,8 +13,8 @@ cmp.setup {
     },
 --]]
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = win_config,
+        documentation = win_config,
     },
 
     sources = {
@@ -20,10 +24,11 @@ cmp.setup {
 
     mapping = {
         ["<CR>"] = function(fallback)
-            if cmp.visible() then
+            -- Fallback if no entry is selected!
+            if cmp.visible() and cmp.get_selected_entry() then
                 cmp.confirm()
             else
-                fallback() -- If you use vim-endwise, this fallback will behave the same as vim-endwise.
+                fallback()
             end
         end,
 

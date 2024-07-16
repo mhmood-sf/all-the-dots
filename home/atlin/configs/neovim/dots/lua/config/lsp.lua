@@ -6,27 +6,23 @@ local lspcfg = require "lspconfig"
 -- Opens diagnostics in float.
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
--- vim.o.updatetime = 500
--- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+-- vim.o.updatetime = 1000
+-- vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 -- Add borders
 -- See: https://vi.stackexchange.com/a/39075
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover, { border = "single" }
+    vim.lsp.handlers.hover, { border = "solid" }
 )
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-    vim.lsp.handlers.signature_help, {
-        border = "single"
-    }
+    vim.lsp.handlers.signature_help, { border = "solid" }
 )
 
 vim.diagnostic.config {
     underline = false,
     virtual_text = false,
-    float = {
-        border = "single"
-    },
+    float = { border = "solid" },
 }
 
 --[ Mappings ]--
@@ -74,3 +70,6 @@ lspcfg.clangd.setup {}
 
 -- Nil (Nix)
 lspcfg.nil_ls.setup {}
+
+-- ZLS (Zig)
+lspcfg.zls.setup {}
