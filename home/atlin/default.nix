@@ -1,4 +1,69 @@
 { pkgs, ... }:
+let
+  iosevka-custom = pkgs.iosevka.override {
+    # From https://typeof.net/Iosevka/customizer
+    privateBuildPlan = ''
+      [buildPlans.Iosevka]
+      family = "Iosevka"
+      spacing = "term"
+      serifs = "sans"
+      noCvSs = true
+      exportGlyphNames = false
+
+      [buildPlans.Iosevka.variants.design]
+      capital-delta = "straight"
+      lower-delta = "flat-top"
+      lower-lambda = "curly-tailed-turn"
+      lower-chi = "semi-chancery-curly"
+      asterisk = "penta-low"
+
+        [buildPlans.Iosevka.ligations]
+        inherits = "dlig"
+
+      [buildPlans.Iosevka.weights.Regular]
+      shape = 400
+      menu = 400
+      css = 400
+
+      [buildPlans.Iosevka.weights.Medium]
+      shape = 500
+      menu = 500
+      css = 500
+
+      [buildPlans.Iosevka.weights.SemiBold]
+      shape = 600
+      menu = 600
+      css = 600
+
+      [buildPlans.Iosevka.weights.Bold]
+      shape = 700
+      menu = 700
+      css = 700
+
+      [buildPlans.Iosevka.weights.ExtraBold]
+      shape = 800
+      menu = 800
+      css = 800
+
+      [buildPlans.Iosevka.weights.Heavy]
+      shape = 900
+      menu = 900
+      css = 900
+
+      [buildPlans.Iosevka.slopes.Upright]
+      angle = 0
+      shape = "upright"
+      menu = "upright"
+      css = "normal"
+
+      [buildPlans.Iosevka.slopes.Italic]
+      angle = 9.4
+      shape = "italic"
+      menu = "italic"
+      css = "italic"
+    '';
+  };
+in
 {
   programs.home-manager.enable = true;
 
@@ -78,7 +143,7 @@
     cascadia-code
     cm_unicode
     font-awesome
-    iosevka
+    iosevka-custom
     lmmath
     noto-fonts-color-emoji
     open-sans
