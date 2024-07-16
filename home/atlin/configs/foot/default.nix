@@ -9,10 +9,10 @@ in {
       enable = true;
       settings = {
         main = {
-          font = "Iosevka:style=Semibold:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
-          font-bold = "Iosevka:style=Bold:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
+          font = "Iosevka:style=Medium:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
+          font-bold = "Iosevka:style=Heavy:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
           font-italic = "Iosevka:style=Italic:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
-          font-bold-italic = "Iosevka:style=Bold Italic:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
+          font-bold-italic = "Iosevka:style=Heavy Italic:size=13, Font Awesome 6 Free Solid:size=10, Cascadia Code NF:size=15, monospace:size=11";
           pad = "7x7 center";
           bold-text-in-bright = "palette-based";
           underline-offset = "2px";
