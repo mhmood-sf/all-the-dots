@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 let
   # My colorscheme plugins
   aks-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -6,8 +6,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "mhmood-sf";
       repo = "aks-nvim";
-      rev = "934d2f79ae926373a5db5101fedfe4665055e7e6";
-      hash = "sha256-B92bKMHDwiTvllHTkQoDZMbd41nZLoWqWPmWcHB9yGU=";
+      rev = "e72c642baa7e0df0feb217bf91e91985a1c10059";
+      hash = "sha256-lly7Rj/HqHJ4jgKv3Xd89X1JHC5v6t1rbNrU+B8U/98=";
     };
   };
   lazyfox-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -15,8 +15,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "mhmood-sf";
       repo = "lazyfox-nvim";
-      rev = "c52785e20937109524b096fbf339345135bc6e08";
-      hash = "sha256-luT2lhs2lTUjQikXDUQbkFofV0DVECSckDwKG8Ksxso=";
+      rev = "0b6fe8c23a1f93dd8bd5dc56c6239fbc247ffe69";
+      hash = "sha256-hj0gRLei9ohbshLD3SHyDjo6kBMWntg+rm48+WI4kjo=";
     };
   };
   linecook-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -24,8 +24,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "mhmood-sf";
       repo = "linecook-nvim";
-      rev = "1eda405243e850f26b37fb95078a21e855679e37";
-      hash = "sha256-4gh7rTxht5LEyyaRun7XB6r6LIMJ62wFL2k8uS3XPds=";
+      rev = "4d3b4d19367f57158e48efc36ed691d207b6392a";
+      hash = "sha256-50Ur7g301Z4qp4EiR4hdCt22Y29jx5qGXXYS2dc22X0=";
     };
   };
 in
@@ -33,12 +33,12 @@ in
   config = {
     programs.neovim = {
       enable = true;
-      # package = pkgs-unstable.neovim;
       defaultEditor = true;
       withRuby = false;
       withPython3 = false;
       withNodeJs = false;
 
+      # TODO: Snippet Engine
       plugins = with pkgs.vimPlugins; [
         aks-nvim
         cmp-nvim-lsp
@@ -50,8 +50,6 @@ in
         nvim-autopairs
         nvim-cmp
         nvim-lspconfig
-        # TODO: Return to stable on next release.
-        # pkgs-unstable.vimPlugins.nvim-snippets
         plenary-nvim
         telescope-nvim
 
