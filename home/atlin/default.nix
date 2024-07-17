@@ -36,10 +36,15 @@ let
       menu = 600
       css = 600
 
-      [buildPlans.IosevkaTerm.weights.Heavy]
-      shape = 900
-      menu = 900
-      css = 900
+      [buildPlans.IosevkaTerm.weights.Bold]
+      shape = 700
+      menu = 700
+      css = 700
+
+      [buildPlans.IosevkaTerm.weights.ExtraBold]
+      shape = 800
+      menu = 800
+      css = 800
 
       [buildPlans.IosevkaTerm.slopes.Upright]
       angle = 0
