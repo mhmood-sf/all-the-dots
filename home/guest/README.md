@@ -1,3 +1,0 @@
-# `/home/guest`
-
-Guest user.
