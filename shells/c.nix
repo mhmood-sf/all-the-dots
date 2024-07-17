@@ -12,6 +12,7 @@
 mkShell {
   shellHook = ''
     echo "Entering Nix DevShell (lang: C)"
+    PS1="(C) $PS1"
   '';
 
   packages = [

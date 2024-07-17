@@ -8,6 +8,7 @@
 mkShell {
   shellHook = ''
     echo "Entering Nix DevShell (lang: Haskell)"
+    PS1="(Haskell) $PS1"
   '';
 
   packages = [

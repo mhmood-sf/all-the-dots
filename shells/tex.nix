@@ -6,6 +6,7 @@
 mkShell {
   shellHook = ''
     echo "Entering Nix DevShell (lang: Teχ)"
+    PS1="(TeX) $PS1"
   '';
 
   packages = [
