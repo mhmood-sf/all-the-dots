@@ -1,65 +1,4 @@
-{ pkgs, ... }:
-let
-  iosevka-term = pkgs.iosevka.override {
-    set = "Term";
-    # See https://typeof.net/Iosevka/customizer
-    privateBuildPlan = ''
-      [buildPlans.IosevkaTerm]
-      family = "Iosevka"
-      spacing = "term"
-      serifs = "sans"
-      noCvSs = true
-      exportGlyphNames = false
-
-      [buildPlans.IosevkaTerm.variants.design]
-      capital-delta = "straight"
-      lower-delta = "flat-top"
-      lower-lambda = "curly-tailed-turn"
-      lower-chi = "semi-chancery-curly"
-      asterisk = "penta-low"
-
-        [buildPlans.IosevkaTerm.ligations]
-        inherits = "dlig"
-
-      [buildPlans.IosevkaTerm.weights.Regular]
-      shape = 400
-      menu = 400
-      css = 400
-
-      [buildPlans.IosevkaTerm.weights.Medium]
-      shape = 500
-      menu = 500
-      css = 500
-
-      [buildPlans.IosevkaTerm.weights.SemiBold]
-      shape = 600
-      menu = 600
-      css = 600
-
-      [buildPlans.IosevkaTerm.weights.Bold]
-      shape = 700
-      menu = 700
-      css = 700
-
-      [buildPlans.IosevkaTerm.weights.ExtraBold]
-      shape = 800
-      menu = 800
-      css = 800
-
-      [buildPlans.IosevkaTerm.slopes.Upright]
-      angle = 0
-      shape = "upright"
-      menu = "upright"
-      css = "normal"
-
-      [buildPlans.IosevkaTerm.slopes.Italic]
-      angle = 9.4
-      shape = "italic"
-      menu = "italic"
-      css = "italic"
-    '';
-  };
-in
+{ pkgs, pkgs-self, ... }:
 {
   programs.home-manager.enable = true;
 
@@ -77,6 +16,9 @@ in
     source = ./scripts;
   };
 
+  # Enable XDG base directories.
+  xdg.enable = true;
+
   # Copy over fonts
   xdg.dataFile."fonts" = {
     enable = true;
@@ -84,12 +26,7 @@ in
     source = ./fonts;
   };
 
-  # Enable XDG base directories.
-  xdg.enable = true;
-
-  # Programs & their configs (comment out a program to disable it).
-  # Some programs don't have options; those are listed below
-  # in `home.packages`.
+  # Packages and their configurations.
   imports = [
     # Window Manager / Desktop Environment
     ./de/gnome
@@ -100,12 +37,11 @@ in
 
     # Development Tools
     ./configs/foot
-    ./configs/neovim
     ./configs/tmux
     ./configs/vscode
+    ./configs/bash
 
     # CLI Tools & Other Utilities
-    ./configs/bat
     ./configs/eza
     ./configs/gitui
     ./configs/htop
@@ -118,17 +54,16 @@ in
 
     # Fonts
     ./configs/fontconfig
-
-    # Misc.
-    ./configs/bash
   ];
 
-  # Other packages that don't really need any configuration, and
-  # don't have HM options either.
+  # Packages that don't really need any configuration.
   home.packages = with pkgs; [
     # Work / Everyday GUI Applications
     obsidian
     zoom-us
+
+    # Development Tools
+    pkgs-self.neovim
 
     # Graphics / Design
     gimp
@@ -139,10 +74,11 @@ in
     cascadia-code
     cm_unicode
     font-awesome
-    iosevka-term
     lmmath
     noto-fonts-color-emoji
     open-sans
+    # Our custom Iosevka package.
+    pkgs-self.iosevka
     xits-math
 
     # CLI Tools & Other Utilities
@@ -153,6 +89,7 @@ in
     qrcp
     slides
     unzip
+    tree
 
     # Install language servers for Lua and Nix here
     # (instead of in dev shells, which is a bit annoying).
