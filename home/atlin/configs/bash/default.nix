@@ -16,7 +16,7 @@
 
       initExtra = ''
         # Prompt.
-        PS1='\[\e[0;1;35;5;25m\]\u\[\e[0m\] @ \[\e[0;1;36;5;25m\]\W\[\e[0;0m\]\n\[\e[0;1;31;5;25m\]$\[\e[0m\] '
+        PS1='\[\e[0;0;31;5;25m\]#\[\e[0m\] '
 
         # Enter a nix dev shell.
         function devshell() {
@@ -29,7 +29,7 @@
           fi
         }
 
-        # Add ~/bin to PATH
+        # Add ~/bin to PATH, for some reason Nix doesn't do it automatically.
         PATH="$PATH:$HOME/bin"
       '';
     };
