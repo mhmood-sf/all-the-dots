@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # Other programs used/needed when running this WM configuration.
   imports = [
@@ -6,17 +7,15 @@
     ../../configs/flameshot
   ];
 
-  config = {
-    xdg.configFile."awesome" = {
-      enable = true;
-      recursive = true;
-      source = ./dots;
-    };
-
-    # Other packages.
-    home.packages = with pkgs; [
-      # Enable clipboard
-      xclip
-    ];
+  xdg.configFile."awesome" = {
+    enable = true;
+    recursive = true;
+    source = ./dots;
   };
+
+  # Other packages.
+  home.packages = with pkgs; [
+    # Enable clipboard
+    xclip
+  ];
 }

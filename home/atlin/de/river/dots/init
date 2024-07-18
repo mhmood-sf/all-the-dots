@@ -103,13 +103,13 @@ riverctl input pointer-1739-52632-MSFT0004:00_06CB:CD98_Touchpad drag enabled
 riverctl focus-follows-cursor normal
 
 # Start notification daemon
-riverctl spawn mako
+# riverctl spawn mako
 
 # Start bar
-riverctl spawn yambar
+# riverctl spawn yambar
 
 # Set up wallpaper
-riverctl spawn "wbg ~/.wallpaper.png"
+# riverctl spawn "wbg ~/.wallpaper.png"
 
 # Night light
-riverctl spawn "wlsunset -l 43.65 -L 79.38 -t 5800 -T 6000"
+# riverctl spawn "wlsunset -l 43.65 -L 79.38 -t 5800 -T 6000"
