@@ -1,8 +1,7 @@
-{ pkgs, ... }:
 {
-  # Enable the X11 windowing system (except not
+  # Enable the X11 windowing system (? except not
   # really, it's actually just to enable GNOME,
-  # which then uses wayland under the hood).
+  # which then uses wayland under the hood). Pretty confusing.
   services.xserver = {
     enable = true;
 
