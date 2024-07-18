@@ -1,5 +1,5 @@
 {
-  description = "my flake";
+  description = "i've no idea what i'm doing";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
@@ -11,11 +11,12 @@
     };
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      pkgs-self = self.packages.${system};
       hm = home-manager;
       colors = import ./colors;
     in {
@@ -36,15 +37,15 @@
               useUserPackages = true;
               users.atlin = ./home/atlin;
               users.guest = ./home/guest;
-              # Pass colors
-              extraSpecialArgs = { inherit colors pkgs-unstable; };
+              # Pass other arguments besides pkgs.
+              extraSpecialArgs = { inherit colors pkgs-unstable pkgs-self; };
             };
           }
         ];
       };
     };
 
-    # Used with `nix develop <flake>#<lang>`
     devShells.${system} = import ./shells { inherit pkgs pkgs-unstable; };
+    packages.${system} = import ./pkgs { inherit pkgs pkgs-unstable; };
   };
 }

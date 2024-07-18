@@ -1,4 +1,5 @@
 { pkgs, ... }:
 {
-  the-nvim = pkgs.callPackage ./neovim { };
+  neovim = pkgs.callPackage ./neovim { };
+  iosevka = pkgs.callPackage ./iosevka { };
 }
