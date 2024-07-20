@@ -20,7 +20,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 )
 
 vim.diagnostic.config {
-    underline = false,
+    underline = true,
     virtual_text = false,
     float = { border = "solid" },
 }
