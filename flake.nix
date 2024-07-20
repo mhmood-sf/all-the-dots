@@ -46,6 +46,6 @@
     };
 
     devShells.${system} = import ./shells { inherit pkgs pkgs-unstable; };
-    packages.${system} = import ./pkgs { inherit pkgs pkgs-unstable; };
+    packages.${system} = import ./pkgs { inherit pkgs pkgs-unstable colors; };
   };
 }

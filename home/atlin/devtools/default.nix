@@ -2,7 +2,6 @@
 {
   imports = [
     ./foot
-    ./tmux
     ./vscode
     ./bash
   ];
@@ -12,7 +11,8 @@
     lua-language-server
     nil
 
-    # Our custom neovim package.
+    # Our custom packages.
     pkgs-self.neovim
+    pkgs-self.tmux
   ];
 }
