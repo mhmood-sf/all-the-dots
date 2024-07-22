@@ -60,6 +60,7 @@ in neovim.override {
         cmp-nvim-lsp
         cmp-buffer
         gitsigns-nvim
+        nabla-nvim
         nvim-autopairs
         nvim-cmp
         nvim-lspconfig
