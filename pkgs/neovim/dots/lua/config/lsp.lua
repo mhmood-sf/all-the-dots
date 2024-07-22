@@ -32,7 +32,7 @@ nnoremap <leader>e <CMD>lua vim.diagnostic.open_float(nil, {focus=false})<CR>
 nnoremap <leader>a <CMD>lua vim.lsp.buf.code_action()<CR>
 ]]
 
--- Lua
+-- Lua Lanuage Server
 require("lspconfig").lua_ls.setup {
   on_init = function (client)
     local path = client.workspace_folders[1].name
@@ -73,3 +73,6 @@ lspcfg.nil_ls.setup {}
 
 -- ZLS (Zig)
 lspcfg.zls.setup {}
+
+-- Typst LSP
+lspcfg.typst_lsp.setup {}
