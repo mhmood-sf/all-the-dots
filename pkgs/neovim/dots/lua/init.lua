@@ -96,3 +96,4 @@ require "config.lsp"
 -- require "config.snippets" -- TODO: Neovim v0.10.0
 require "config.telescope"
 require "config.treesitter"
+require "config.nabla"
