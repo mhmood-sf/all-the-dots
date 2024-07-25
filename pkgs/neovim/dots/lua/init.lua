@@ -1,6 +1,3 @@
-local fn  = vim.fn
-local map = vim.api.nvim_set_keymap
-
 --[ Editor options ]--
 vim.o.sm    = true    -- showmatch: Show matching brackets.
 vim.o.sc    = true    -- showcmd: Show command as it is being typed.
@@ -36,7 +33,7 @@ vim.o.wim = "longest,list"
 -- fillchars: Characters for window separators and special lines.
 vim.o.fcs = "vert:┃,horiz:━"
 -- undodir: Directory for the undofile
-vim.o.udir = fn.stdpath("data") .. "/undo/"
+vim.o.udir = vim.fn.stdpath("data") .. "/undo/"
 
 --[ TeX FT Plugin Options ]--
 vim.g.tex_flavor = "latex"
@@ -49,41 +46,75 @@ vim.g.netrw_winsize = 20
 --[ Mappings ]--
 vim.g.mapleader = " "
 
-local opts = { noremap = true }
+local keymap = vim.keymap
 
--- Enter to insert new line without leaving normal mode
-map("n", "<Enter>", "o<Esc>", opts)
+-- General QOL.
+keymap.set("n", "<Enter>", "o<Esc>", {
+    desc = "Insert new line without leaving normal mode."
+})
 
--- Avoid pressing shift all the time for ex commands
-map("n", ";", ":", opts)
+keymap.set("n", ";", ":", {
+    desc = "Avoid pressing shift every time to enter command mode."
+})
 
--- Use Esc to exit terminal-insert mode
-map("t", "<Esc>", "<C-\\><C-n>", opts)
+keymap.set("t", "<Esc>", "<C-\\><C-n>", {
+    desc = "Use <Esc> to exit terminal-insert mode."
+})
 
--- Arrow keys for window sizes
-map("n", "<Up>",    "<C-W>+", opts)
-map("n", "<Down>",  "<C-W>-", opts)
-map("n", "<Right>", "<C-W>>", opts)
-map("n", "<Left>",  "<C-W><", opts)
+keymap.set("n", "<Esc>", "<CMD>nohlsearch|diffupdate<CR><C-L>", {
+    desc = "Clear search highlighting"
+})
 
--- H: First non-blank char of line + center cursorline.
--- L: Last character of line + center cursorline.
-map("n", "<S-h>", "^zz",     opts)
-map("n", "<S-l>", "$zz",    opts)
+-- Window sizes.
+keymap.set("n", "<Up>",    "<C-W>+", {
+    desc = "Increase vertical window size."
+})
 
--- J: Scroll downwards based on 'scroll' option
--- K: Scroll upwards based on 'scroll' option
-map("n", "<S-j>", "<C-d>M", opts)
-map("n", "<S-k>", "<C-u>M", opts)
+keymap.set("n", "<Down>",  "<C-W>-", {
+    desc = "Decrease vertical window size."
+})
 
--- <C-hjkl> for splits
-map("n", "<C-h>", "<CMD>vsplit<CR>", opts)
-map("n", "<C-k>", "<CMD>split<CR>", opts)
-map("n", "<C-l>", "<CMD>vsplit<CR><C-w>l", opts)
-map("n", "<C-j>", "<CMD>split<CR><C-w>j", opts)
+keymap.set("n", "<Right>", "<C-W>>", {
+    desc = "Increase horizontal window size."
+})
 
--- <Esc> to clear search highlighting
-map("n", "<Esc>", "<CMD>nohlsearch|diffupdate<CR><C-L>", opts)
+keymap.set("n", "<Left>",  "<C-W><", {
+    desc = "Decrease horizontal window size."
+})
+
+-- Jumping to start/end of current line.
+keymap.set("n", "<S-h>", "^zz", {
+    desc = "Jump to first non-blank char of current line, and center cursor."
+})
+
+keymap.set("n", "<S-l>", "$zz", {
+    desc = "Jump to last char of current line, and center cursor."
+})
+
+-- Scrolling.
+keymap.set("n", "<S-j>", "<C-d>M", {
+    desc = "Scroll down based on 'scroll' option, and center cursor."
+})
+keymap.set("n", "<S-k>", "<C-u>M", {
+    desc = "Scroll up based on 'scroll' option, and center cursor."
+})
+
+-- Opening splits.
+keymap.set("n", "<C-h>", "<CMD>vsplit<CR>", {
+    desc = "Open a vertical split, focused on the left split."
+})
+
+keymap.set("n", "<C-j>", "<CMD>split<CR><C-w>j", {
+    desc = "Open a horizontal split, focused on the lower split."
+})
+
+keymap.set("n", "<C-k>", "<CMD>split<CR>", {
+    desc = "Open a horizontal split, focused on the upper split."
+})
+
+keymap.set("n", "<C-l>", "<CMD>vsplit<CR><C-w>l", {
+    desc = "Open a vertical split, focused on the right split."
+})
 
 --[ Plugins & Colorscheme ]--
 vim.cmd "colorscheme lazyfox"
