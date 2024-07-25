@@ -12,25 +12,24 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-      pkgs-self = self.packages.${system};
-      hm = home-manager;
-      colors = import ./colors;
-    in {
-    # Used with `nixos-rebuild --flake .#<hostname>`
+  let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    pkgs-self = self.packages.${system};
+    hm = home-manager;
+    colors = import ./colors;
+  in {
+    devShells.${system} = import ./shells { inherit pkgs pkgs-unstable; };
+    packages.${system} = import ./pkgs { inherit pkgs pkgs-unstable colors; };
+
     nixosConfigurations = {
       snowman-ms = nixpkgs.lib.nixosSystem {
         modules = [
-          # Host configuration
           ./host/snowman-ms
 
-          # Home-manager module
           hm.nixosModules.home-manager
 
-          # Home-manager configuration
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -44,8 +43,5 @@
         ];
       };
     };
-
-    devShells.${system} = import ./shells { inherit pkgs pkgs-unstable; };
-    packages.${system} = import ./pkgs { inherit pkgs pkgs-unstable colors; };
   };
 }
