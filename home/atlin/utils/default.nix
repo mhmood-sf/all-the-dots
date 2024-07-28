@@ -6,6 +6,7 @@
     ./htop
     ./ripgrep
     ./yazi
+    ./zk
   ];
 
   home.packages = with pkgs; [

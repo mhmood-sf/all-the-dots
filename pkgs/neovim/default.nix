@@ -66,6 +66,7 @@ in neovim.override {
         nvim-lspconfig
         plenary-nvim
         telescope-nvim
+        zk-nvim
 
         (nvim-treesitter.withPlugins (p: [
           p.zig
