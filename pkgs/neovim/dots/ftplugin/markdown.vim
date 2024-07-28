@@ -4,7 +4,6 @@ setlocal wrap      " Wrap long lines
 setlocal linebreak " Wrap long lines at sane points
 
 lua << EOF
-
 local hi = require(vim.g.colors_name).hi
 local colors = require(vim.g.colors_name).colors
 

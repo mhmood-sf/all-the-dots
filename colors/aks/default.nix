@@ -5,8 +5,8 @@
     isDark = true;
 
     # Shades
-    shade0  = "#17171C";
-    shade1  = "#222430";
+    shade0  = "#222430";
+    shade1  = "#36394B";
     shade2  = "#3E4856";
     shade3  = "#5B697B";
     shade4  = "#CBD1EC";
@@ -22,7 +22,7 @@
     accent5 = "#5596F7";
     accent6 = "#FC56B1";
     accent7 = "#A972FF";
-    # Brighter accents (same as above, just provided for completeness and consistency with other colorschemes)
+    # Brighter accents (same as above; no brights in this colorscheme)
     bright0 = "#EF476F";
     bright1 = "#FE995E";
     bright2 = "#FADD5C";
@@ -48,8 +48,8 @@
     shade3  = "#ABB3CA";
     shade4  = "#5B697B";
     shade5  = "#3E4856";
-    shade6  = "#222430";
-    shade7  = "#17171C";
+    shade6  = "#36394B";
+    shade7  = "#222430";
     # Accents
     accent0 = "#FF1D4E";
     accent1 = "#FC8E4E";
