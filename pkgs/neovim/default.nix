@@ -7,8 +7,8 @@ let
       src = fetchFromGitHub {
         owner = "mhmood-sf";
         repo = "aks-nvim";
-        rev = "e72c642baa7e0df0feb217bf91e91985a1c10059";
-        hash = "sha256-lly7Rj/HqHJ4jgKv3Xd89X1JHC5v6t1rbNrU+B8U/98=";
+        rev = "ae7da469bf781dc916bf89ce6e99a65328b1593e";
+        hash = "sha256-JtskEHVVdG6Hq595maFXiMv2/ZFHUalh3sE8ra8zNg8=";
       };
     };
     lazyfox-nvim = vimUtils.buildVimPlugin {

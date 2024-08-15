@@ -117,7 +117,7 @@ keymap.set("n", "<C-l>", "<CMD>vsplit<CR><C-w>l", {
 })
 
 --[ Plugins & Colorscheme ]--
-vim.cmd "colorscheme lazyfox"
+vim.cmd "colorscheme aks"
 
 require "config.statusline"
 require "config.gitsigns"
