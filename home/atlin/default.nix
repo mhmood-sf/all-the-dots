@@ -26,8 +26,8 @@
     ./mozilla
     # Various utilities (command line tools, launchers, gestures, etc.)
     ./utils
-    # Document / image viewers.
-    ./viewers
+    # Office suite, PDF/image viewer, etc.
+    ./office
   ];
 
   # Misc. packages.
