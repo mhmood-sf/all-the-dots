@@ -5,12 +5,10 @@
     ./gitui
     ./htop
     ./ripgrep
-    ./yazi
     ./zk
   ];
 
   home.packages = with pkgs; [
-    ascii-image-converter
     fzf
     ghostscript
     glow
