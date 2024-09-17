@@ -11,24 +11,28 @@ mkShell {
 
   packages = [
     (texliveSmall.withPackages (ps: with ps; [
-      newpx
+      bbold
       enumitem
-      tcolorbox
       environ
-      xstring
-      fontaxes
-      kastrup
-      tikzfill
-      pdfcol
-      listingsutf8
-      newtx
-      txfonts
-      titlesec
-      multirow
       fontawesome
-      transparent
-      preprint
+      fontaxes
+      fpl
+      kastrup
+      listingsutf8
       marvosym
+      mathpazo
+      multirow
+      newpx
+      newtx
+      palatino
+      pdfcol
+      preprint
+      tcolorbox
+      tikzfill
+      titlesec
+      transparent
+      txfonts
+      xstring
     ]))
   ];
 }
