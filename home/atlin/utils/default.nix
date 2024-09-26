@@ -12,6 +12,7 @@
     fzf
     ghostscript
     glow
+    gnuplot
     imagemagick
     libnotify # for custom notifications
     monolith

@@ -30,9 +30,8 @@
     ./office
   ];
 
-  # Misc. packages.
+  # Misc. packages (including temporary ones e.g. for school).
   home.packages = with pkgs; [
-    obsidian
     zoom-us
   ];
 

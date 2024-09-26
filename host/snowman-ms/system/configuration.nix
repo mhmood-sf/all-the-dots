@@ -84,7 +84,9 @@
     git
     wget
     curl
-    acpi # For battery status
+    acpi
+    # ???
+    linuxPackages.perf
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
