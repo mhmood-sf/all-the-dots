@@ -15,9 +15,9 @@
     gnuplot
     imagemagick
     libnotify # for custom notifications
-    monolith
+    # monolith
     qrcp
-    slides
+    # slides
     tree
     unzip
   ];

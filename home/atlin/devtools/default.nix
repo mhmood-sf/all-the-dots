@@ -2,7 +2,7 @@
 {
   imports = [
     ./foot
-    ./vscode
+    # ./vscode
     ./bash
   ];
 
@@ -13,6 +13,6 @@
 
     # Our custom packages.
     pkgs-self.neovim
-    pkgs-self.tmux
+    # pkgs-self.tmux
   ];
 }
