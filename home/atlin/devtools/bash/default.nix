@@ -11,6 +11,7 @@
       # Run mv/cp in interactive mode (ask before overwriting files).
       mv = "mv -i";
       cp = "cp -i";
+      teachcs = "TERM=vt100 ssh saifima1@teach.cs.toronto.edu";
     };
 
     initExtra = ''
