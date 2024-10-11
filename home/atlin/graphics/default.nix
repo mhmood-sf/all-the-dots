@@ -4,5 +4,6 @@
     gimp
     inkscape
     kdePackages.kdenlive
+    krita
   ];
 }
