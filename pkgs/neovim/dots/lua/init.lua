@@ -1,47 +1,52 @@
 --[ Editor options ]--
-vim.o.sm    = true    -- showmatch: Show matching brackets.
-vim.o.sc    = true    -- showcmd: Show command as it is being typed.
-vim.o.ic    = true    -- ignorecase: Case-insensitive matching.
-vim.o.et    = true    -- expandtab: Convert tabs to whitespace.
-vim.o.ai    = true    -- autoindent: Indent new lines the same as previous.
-vim.o.nu    = true    -- number: Show line numbers.
-vim.o.ru    = true    -- ruler: Show cursor position in default statusline.
-vim.o.lz    = true    -- lazyredraw: Postpone redraws for various commands.
-vim.o.hls   = true    -- hlsesarch: Highlight search results.
-vim.o.tgc   = true    -- termguicolors: Use gui colors in terminal.
-vim.o.udf   = true    -- undofile: Save undo tree for persistent undo's.
-vim.o.list  = true    -- list: Show trailing whitespace.
-vim.o.cul   = true    -- cursorline: Highlight current line.
+vim.o.ai    = true  -- autoindent: Indent new lines the same as previous.
+vim.o.cul   = true  -- cursorline: Highlight current line.
+vim.o.et    = true  -- expandtab: Convert tabs to whitespace.
+vim.o.hls   = true  -- hlsesarch: Highlight search results.
+vim.o.ic    = true  -- ignorecase: Case-insensitive matching.
+vim.o.list  = true  -- list: Show trailing whitespace.
+vim.o.lz    = true  -- lazyredraw: Postpone redraws for various commands.
+vim.o.nu    = true  -- number: Show line numbers.
+vim.o.ru    = true  -- ruler: Show cursor position in default statusline.
+vim.o.sc    = true  -- showcmd: Show command as it is being typed.
+vim.o.sm    = true  -- showmatch: Show matching brackets.
+vim.o.tgc   = true  -- termguicolors: Use gui colors in terminal.
+vim.o.title = false -- title: Don't set terminal title.
+vim.o.udf   = true  -- undofile: Save undo tree for persistent undo's.
+vim.o.wrap  = false -- wrap: Dont wrap lines.
 
-vim.o.title = false   -- title: Don't set terminal title.
-vim.o.wrap  = false   -- wrap: Dont wrap lines.
+vim.o.fdls  = 2 -- foldlevelstart: Open files with fold level set to 2.
+vim.o.ls    = 2 -- laststatus: Always show one statusline.
+vim.o.so    = 9 -- scrolloff: 9 lines scroll offset.
+vim.o.sts   = 4 -- softtabstop: 4 spaces as one tab.
+vim.o.sw    = 4 -- shiftwidth: Autoindent width.
+vim.o.ts    = 4 -- tabstop: Number of cols in one tab char.
+vim.o.tw    = 0 -- textwidth: Max width, longer lines are broken up.
 
-vim.o.so    = 9       -- scrolloff: 9 lines scroll offset.
-vim.o.ls    = 2       -- laststatus: Always show one statusline.
-vim.o.sts   = 4       -- softtabstop: 4 spaces as one tab.
-vim.o.ts    = 4       -- tabstop: Number of cols in one tab char.
-vim.o.sw    = 4       -- shiftwidth: Autoindent width.
-vim.o.tw    = 0       -- textwidth: Max width, longer lines are broken up.
-vim.o.cc    = "80"    -- colorcolumn: Highlight col to help align text.
-vim.o.ff    = "unix"  -- fileformat: Unix file endings.
-vim.o.spl   = "en_gb" -- spelllang: Set spelling language.
+vim.o.cc    = "80"     -- colorcolumn: Highlight col to help align text.
+vim.o.fdc   = "auto:9" -- foldcolumn: Show lines in gutter indicating folds.
+vim.o.fdm   = "expr"   -- foldmethod: How to set folds in a file.
+vim.o.ff    = "unix"   -- fileformat: Unix file endings.
+vim.o.spl   = "en_gb"  -- spelllang: Set spelling language.
 
--- splitkeep: Keep topline same when scrolling windows.
-vim.o.spk = "topline"
--- wildmode: Bash-like tab completion.
-vim.o.wim = "longest,list"
 -- fillchars: Characters for window separators and special lines.
 vim.o.fcs = "vert:┃,horiz:━"
+-- foldexpr: Use treesitter to define folds.
+vim.o.fde = "v:lua.vim.treesitter.foldexpr()"
+-- splitkeep: Keep topline same when scrolling windows.
+vim.o.spk = "topline"
 -- undodir: Directory for the undofile
 vim.o.udir = vim.fn.stdpath("data") .. "/undo/"
+-- wildmode: Bash-like tab completion.
+vim.o.wim = "longest,list"
 
 --[ TeX FT Plugin Options ]--
 vim.g.tex_flavor = "latex"
 
 --[ Netrw Options ]--
 vim.g.netrw_preview = 1
-vim.g.newtrw_liststyle = 3
 vim.g.netrw_winsize = 20
+vim.g.newtrw_liststyle = 3
 
 --[ Mappings ]--
 vim.g.mapleader = " "
