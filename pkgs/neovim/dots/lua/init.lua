@@ -30,7 +30,7 @@ vim.o.ff    = "unix"   -- fileformat: Unix file endings.
 vim.o.spl   = "en_gb"  -- spelllang: Set spelling language.
 
 -- fillchars: Characters for window separators and special lines.
-vim.o.fcs = "vert:┃,horiz:━"
+vim.o.fcs = "vert:┃,horiz:━,fold: ,foldopen:╭,foldsep:│,foldclose:›"
 -- foldexpr: Use treesitter to define folds.
 vim.o.fde = "v:lua.vim.treesitter.foldexpr()"
 -- splitkeep: Keep topline same when scrolling windows.
