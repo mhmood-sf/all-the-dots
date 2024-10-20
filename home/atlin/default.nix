@@ -20,14 +20,14 @@
     ./devtools
     # Self-explanatory.
     ./fonts
-    # GIMP, Inkscape, etc.
-    ./graphics
+    # GIMP, Inkscape, Music Player, etc.
+    ./multimedia
     # Firefox and Thunderbird.
     ./mozilla
     # Various utilities (command line tools, launchers, gestures, etc.)
     ./utils
     # Office suite, PDF/image viewer, etc.
-    ./office
+    ./documents
   ];
 
   # Misc. packages (including temporary ones e.g. for school).
