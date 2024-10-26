@@ -60,13 +60,13 @@ in neovim.override {
         cmp-nvim-lsp
         cmp-buffer
         gitsigns-nvim
+        lean-nvim
         nabla-nvim
         nvim-autopairs
         nvim-cmp
         nvim-lspconfig
         plenary-nvim
         telescope-nvim
-        zk-nvim
 
         (nvim-treesitter.withPlugins (p: [
           p.zig
