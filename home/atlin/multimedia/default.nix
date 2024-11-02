@@ -4,7 +4,7 @@
     amberol
     gimp
     inkscape
-    kdePackages.kdenlive
+    #kdePackages.kdenlive
     krita
   ];
 }

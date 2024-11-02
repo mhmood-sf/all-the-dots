@@ -5,7 +5,6 @@
     ./gitui
     ./htop
     ./ripgrep
-    ./zk
   ];
 
   home.packages = with pkgs; [
@@ -15,9 +14,9 @@
     gnuplot
     imagemagick
     libnotify # for custom notifications
-    # monolith
+    #monolith
     qrcp
-    # slides
+    #slides
     tree
     unzip
   ];

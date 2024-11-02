@@ -1,9 +1,9 @@
 { pkgs, pkgs-self, ... }:
 {
   imports = [
+    ./bash
     ./foot
     # ./vscode
-    ./bash
   ];
 
   home.packages = with pkgs; [
@@ -14,6 +14,6 @@
 
     # Our custom packages.
     pkgs-self.neovim
-    # pkgs-self.tmux
+    pkgs-self.tmux
   ];
 }
