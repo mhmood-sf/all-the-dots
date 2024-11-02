@@ -15,7 +15,7 @@ vim.o.title = false -- title: Don't set terminal title.
 vim.o.udf   = true  -- undofile: Save undo tree for persistent undo's.
 vim.o.wrap  = false -- wrap: Dont wrap lines.
 
-vim.o.fdls  = 2 -- foldlevelstart: Open files with fold level set to 2.
+vim.o.fdls  = 9 -- foldlevelstart: Open files with fold level set to 9.
 vim.o.ls    = 2 -- laststatus: Always show one statusline.
 vim.o.so    = 9 -- scrolloff: 9 lines scroll offset.
 vim.o.sts   = 4 -- softtabstop: 4 spaces as one tab.
