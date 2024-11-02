@@ -30,6 +30,7 @@ vim.cmd [[
 nnoremap <leader>i <CMD>lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>e <CMD>lua vim.diagnostic.open_float(nil, {focus=false})<CR>
 nnoremap <leader>a <CMD>lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>d <CMD>Telescope lsp_definitions<CR>
 ]]
 
 -- Lua Lanuage Server
@@ -76,3 +77,18 @@ lspcfg.zls.setup {}
 
 -- Typst LSP
 lspcfg.typst_lsp.setup {}
+
+-- Markdown (Markdown-Oxide)
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+lspcfg.markdown_oxide.setup {
+    -- Ensure that dynamicRegistration is enabled! This allows the LS to take
+    -- into account actions like the Create Unresolved File code action,
+    -- resolving completions for unindexed code blocks.
+    capabilities = vim.tbl_deep_extend('force', capabilities, {
+        workspace = {
+            didChangeWatchedFiles = {
+                dynamicRegistration = true,
+            },
+        },
+    }),
+}
