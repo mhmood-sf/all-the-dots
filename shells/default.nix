@@ -9,6 +9,7 @@ rec {
   python  = pkgs.callPackage ./python.nix { };
   sml     = pkgs.callPackage ./sml.nix { };
   tex     = pkgs.callPackage ./tex.nix { };
+  typst   = pkgs.callPackage ./typst.nix { };
 
   # Unstable version (for the latest packages)
   lean-unstable    = pkgs-unstable.callPackage ./lean.nix { };
