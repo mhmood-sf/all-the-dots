@@ -12,6 +12,7 @@
       mv = "mv -i";
       cp = "cp -i";
       teachcs = "TERM=vt100 ssh saifima1@teach.cs.toronto.edu";
+      dhlab = "TERM=vt100 ssh saifima1@dh2026pc20.utm.utoronto.ca";
     };
 
     initExtra = ''
