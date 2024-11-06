@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     # Make these LSPs always available, for use in neovim and otherwise.
-    markdown-oxide
+    marksman
     lua-language-server
     nil
 
