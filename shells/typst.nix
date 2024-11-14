@@ -1,7 +1,6 @@
 {
   mkShell,
   typst,
-  typst-lsp
 }:
 
 mkShell {
@@ -12,6 +11,5 @@ mkShell {
 
   packages = [
     typst
-    typst-lsp
   ];
 }

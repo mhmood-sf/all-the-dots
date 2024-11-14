@@ -75,8 +75,5 @@ lspcfg.nil_ls.setup {}
 -- ZLS (Zig)
 lspcfg.zls.setup {}
 
--- Typst LSP
-lspcfg.typst_lsp.setup {}
-
 -- Markdown (Marksman)
 lspcfg.marksman.setup {}
