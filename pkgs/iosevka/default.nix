@@ -1,6 +1,6 @@
 # NOTE: Custom builds of Iosevka try to use ALL CPUs, and have a very high
 # RAM usage, which often leads to out-of-memory issues. When building this
-# package, use $NIX_BUILD_CORES to limit the number of cores (and RAM) used.
+# package, use --cores N to limit the number of cores (and RAM) used.
 # However, doing this will take longer to build.
 
 { iosevka }:
