@@ -19,7 +19,7 @@ iosevka.override {
     capital-delta = "straight"
     lower-delta = "flat-top"
     lower-lambda = "curly-tailed-turn"
-    lower-chi = "semi-chancery-curly"
+    lower-chi = "semi-chancery-straight-serifless"
     asterisk = "penta-low"
 
       [buildPlans.IosevkaTerm.ligations]
