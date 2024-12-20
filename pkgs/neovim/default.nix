@@ -7,8 +7,8 @@ let
       src = fetchFromGitHub {
         owner = "mhmood-sf";
         repo = "aks-nvim";
-        rev = "25b1b50cb76ca7358ad98749294546fe660677cc";
-        hash = "sha256-mxl5vnPnkpRIz15gdKybW6JxnUph0rwD9khEQV1RicU=";
+        rev = "e165b58559f7fccd18f6f982c024ccc0b88e8609";
+        hash = "sha256-VQR6eoj7uiNBJsDimGDZP+W1Mfc+hvQDX5z76tMgals=";
       };
     };
     lazyfox-nvim = vimUtils.buildVimPlugin {
@@ -16,8 +16,8 @@ let
       src = fetchFromGitHub {
         owner = "mhmood-sf";
         repo = "lazyfox-nvim";
-        rev = "0b6fe8c23a1f93dd8bd5dc56c6239fbc247ffe69";
-        hash = "sha256-hj0gRLei9ohbshLD3SHyDjo6kBMWntg+rm48+WI4kjo=";
+        rev = "9bbcb7132c2e96198f233287cf050c2248dd0b9d";
+        hash = "sha256-OU6PoeW40l6t8YEVXppruopddlbDKREI0jrerdESrCQ=";
       };
     };
     linecook-nvim = vimUtils.buildVimPlugin {
