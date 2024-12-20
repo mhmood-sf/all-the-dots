@@ -5,13 +5,11 @@ win_config.border = "solid"
 win_config.winhighlight = "FloatBorder:FloatBorder,CursorLine:Visual,Search:None"
 
 cmp.setup {
---[[ TODO: Install snippet manager.
     snippet = {
         expand = function(args)
             vim.snippet.expand(args.body)
         end
     },
---]]
     window = {
         completion = win_config,
         documentation = win_config,
@@ -19,12 +17,7 @@ cmp.setup {
 
     sources = {
         {
-            name = "nvim_lsp",
-            option = {
-                markdown_oxide = {
-                    keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
-                }
-            }
+            name = "nvim_lsp"
         },
         {
             name = "buffer"
@@ -46,6 +39,8 @@ cmp.setup {
         ["<Tab>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif vim.snippet.active({ direction = 1 }) then
+                vim.snippet.jump(1)
             else
                 fallback()
             end
@@ -55,6 +50,8 @@ cmp.setup {
         ["<S-Tab>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            elseif vim.snippet.active({ direction = -1 }) then
+                vim.snippet.jump(-1)
             else
                 fallback()
             end
