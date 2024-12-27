@@ -1,1 +1,1 @@
-require("lean").setup()
+require("lean").setup {}

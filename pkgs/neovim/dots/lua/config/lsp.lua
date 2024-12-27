@@ -67,16 +67,16 @@ require("lspconfig").lua_ls.setup {
 }
 
 -- ClangD (C/C++)
-lspcfg.clangd.setup()
+lspcfg.clangd.setup {}
 
 -- Nil (Nix)
-lspcfg.nil_ls.setup()
+lspcfg.nil_ls.setup {}
 
 -- ZLS (Zig)
-lspcfg.zls.setup()
+lspcfg.zls.setup {}
 
 -- Markdown (Marksman)
-lspcfg.marksman.setup()
+lspcfg.marksman.setup {}
 
 -- Harper (Grammar Checker)
-lspcfg.harper_ls.setup()
+lspcfg.harper_ls.setup {}
