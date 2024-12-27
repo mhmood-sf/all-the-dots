@@ -42,7 +42,9 @@ local mode = function(stl)
 end
 
 local modified = function(stl)
-    local modified = vim.api.nvim_buf_get_option(stl.bufnr, "modified")
+    local modified = vim.api.nvim_get_option_value("modified", {
+        buf = stl.bufnr
+    })
     return modified and "[•] " or ""
 end
 
@@ -52,7 +54,8 @@ end
 
 local filetype = function(stl)
     local bubble = stl.active and pink_bubble or inactive_bubble
-    return bubble(vim.api.nvim_buf_get_option(stl.bufnr, "filetype"))
+    local ft = vim.api.nvim_get_option_value("filetype", { buf = stl.bufnr })
+    return bubble(ft)
 end
 
 local position = function(stl)

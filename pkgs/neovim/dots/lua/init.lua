@@ -15,7 +15,7 @@ vim.o.title = false -- title: Don't set terminal title.
 vim.o.udf   = true  -- undofile: Save undo tree for persistent undo's.
 vim.o.wrap  = false -- wrap: Dont wrap lines.
 
-vim.o.fdls  = 9 -- foldlevelstart: Open files with fold level set to 9.
+vim.o.fdls  = 3 -- foldlevelstart: Open files with fold level set to 3.
 vim.o.ls    = 2 -- laststatus: Always show one statusline.
 vim.o.so    = 9 -- scrolloff: 9 lines scroll offset.
 vim.o.sts   = 4 -- softtabstop: 4 spaces as one tab.
@@ -123,14 +123,13 @@ keymap.set("n", "<C-l>", "<CMD>vsplit<CR><C-w>l", {
 
 --[ Plugins & Colorscheme ]--
 vim.g.aks_variant = "light"
-vim.cmd "colorscheme aks"
+vim.cmd "colorscheme lazyfox"
 
 require "config.statusline"
 require "config.gitsigns"
 require "config.autopairs"
 require "config.cmp"
 require "config.lsp"
--- require "config.snippets" -- TODO: Neovim v0.10.0
 require "config.telescope"
 require "config.treesitter"
 require "config.nabla"
