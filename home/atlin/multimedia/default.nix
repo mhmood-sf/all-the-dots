@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./zathura
+    ./feh
   ];
 
   home.packages = with pkgs; [
