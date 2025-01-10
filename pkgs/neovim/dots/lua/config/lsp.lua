@@ -77,6 +77,3 @@ lspcfg.zls.setup {}
 
 -- Markdown (Marksman)
 lspcfg.marksman.setup {}
-
--- Harper (Grammar Checker)
-lspcfg.harper_ls.setup {}

@@ -9,7 +9,6 @@
   home.packages = with pkgs; [
     # Make these LSPs always available, for use in neovim and otherwise.
     marksman
-    harper
     lua-language-server
     nil
 
