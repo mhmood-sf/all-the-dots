@@ -33,7 +33,7 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # Persist volume across shutdowns.
-  hardware.alsa.enablePersistence = true;
+  # hardware.alsa.enablePersistence = true;
 
   # Enable bluetooth.
   hardware.bluetooth = {
