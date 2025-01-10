@@ -36,26 +36,29 @@ in {
       font-style-italic = "Medium Italic";
       font-style-bold-italic = "Extrabold Italic";
 
-      adjust-underline-position = 2;
-      adjust-underline-thickness = 2;
       adjust-cell-height = 5;
       adjust-font-baseline = -1;
+      adjust-underline-position = 2;
+      adjust-underline-thickness = 2;
 
-      # For some reason, shell integration interferes with cursor style.
-      shell-integration = "none";
+      adjust-cursor-thickness = 2;
       cursor-style = "block";
       cursor-style-blink = false;
+      # For some reason, shell integration interferes with cursor style.
+      shell-integration = "none";
 
+      window-decoration = true;
+      window-padding-color = "extend";
       window-padding-x = "7";
       window-padding-y = "7";
-      window-padding-color = "extend";
-      window-decoration = true;
 
       # We'll create the theme based on the provided colors.
       theme = "nixos-ghostty-theme";
     };
     themes = {
       nixos-ghostty-theme = {
+        bold-is-bright = true;
+        cursor-color = getColor colors.blue;
         foreground = getColor colors.fg-primary;
         background = getColor colors.bg-primary;
         selection-background = getColor palette.aux0;
