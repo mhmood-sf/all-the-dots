@@ -2,7 +2,8 @@
 {
   imports = [
     ./bash
-    ./foot
+    # ./foot
+    ./ghostty
     # ./vscode
   ];
 
