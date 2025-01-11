@@ -122,8 +122,8 @@ keymap.set("n", "<C-l>", "<CMD>vsplit<CR><C-w>l", {
 })
 
 --[ Plugins & Colorscheme ]--
-vim.g.aks_variant = "light"
-vim.cmd "colorscheme lazyfox"
+vim.g.aks_variant = "dark"
+vim.cmd "colorscheme aks"
 
 require "config.statusline"
 require "config.gitsigns"
