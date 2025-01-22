@@ -122,8 +122,30 @@ keymap.set("n", "<C-l>", "<CMD>vsplit<CR><C-w>l", {
 })
 
 --[ Plugins & Colorscheme ]--
-vim.g.aks_variant = "dark"
-vim.cmd "colorscheme aks"
+
+-- Helper to query system's light/dark preference. This will at least make sure
+-- the system preference is respected everytime we start neovim (but not if we
+-- change the preference while an instance of neovim is already running).
+local function prefers_dark()
+    local res = vim.system({
+        "gsettings",
+        "get",
+        "org.gnome.desktop.interface",
+        "color-scheme"
+    }, { text=true }):wait()
+
+    return res.stdout:find("dark") ~= nil
+end
+
+if prefers_dark() then
+    vim.g.aks_variant = "dark"
+    vim.cmd "colorscheme aks"
+else
+    -- We use lazyfox for light mode, but set the aks variant anyways,
+    -- so that we don't enter dark mode if we switch the colorschem to aks.
+    vim.g.aks_variant = "light"
+    vim.cmd "colorscheme lazyfox"
+end
 
 require "config.autopairs"
 require "config.cmp"
