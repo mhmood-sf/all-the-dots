@@ -18,16 +18,16 @@
     ./de
     # Terminal, editors, etc.
     ./devtools
-    # Self-explanatory.
-    ./fonts
-    # GIMP, Inkscape, Music Player, etc.
-    ./multimedia
-    # Firefox and Thunderbird.
-    ./mozilla
-    # Various utilities (command line tools, launchers, gestures, etc.)
-    ./utils
     # Office suite, PDF/image viewer, etc.
     ./documents
+    # Self-explanatory.
+    ./fonts
+    # Web Browser, Email, RSS, IRC, etc.
+    ./internet
+    # GIMP, Inkscape, Music Player, etc.
+    ./multimedia
+    # Various utilities (command line tools, launchers, gestures, etc.)
+    ./utils
   ];
 
   # Misc. packages (including temporary ones e.g. for school).
