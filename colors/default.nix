@@ -1,7 +1,7 @@
 rec {
   # Just change the filename to choose a different colorscheme.
   # And then light/dark/whatever variant is available for the palette.
-  colorscheme = import ./aks;
+  colorscheme = import ./lazyfox;
   palette = colorscheme.dark;
 
   # Shades
