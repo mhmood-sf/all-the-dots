@@ -9,33 +9,24 @@ in {
     enable = true;
     settings = {
       font-family = [
-        "Iosevka"
+        "Iosevka Medium"
         "Font Awesome 6 Free Solid"
-        "Cascadia Code NF"
       ];
 
       font-family-bold = [
-        "Iosevka"
+        "Iosevka Extrabold"
         "Font Awesome 6 Free Solid"
-        "Cascadia Code NF"
       ];
 
       font-family-italic = [
-        "Iosevka"
+        "Iosevka Medium Italic"
         "Font Awesome 6 Free Solid"
-        "Cascadia Code NF"
       ];
 
       font-family-bold-italic = [
-        "Iosevka"
+        "Iosevka Extrabold Italic"
         "Font Awesome 6 Free Solid"
-        "Cascadia Code NF"
       ];
-
-      font-style = "Medium";
-      font-style-bold = "Extrabold";
-      font-style-italic = "Medium Italic";
-      font-style-bold-italic = "Extrabold Italic";
 
       # Bigger cell height, with the font centered in the middle, and the
       # cursor adjusted to the cell's height.
