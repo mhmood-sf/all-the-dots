@@ -20,16 +20,17 @@ local black_bubble = builtin.containers.bubble("black_bubble", {
 
 local pink_bubble = builtin.containers.bubble("pink_bubble", {
     fg = colors.shade0,
-    bg = colors.accent6
+    bg = colors.accent6,
+    gui = "bold"
 })
 
 local inactive_bubble = builtin.containers.bubble("inactive_bubble", {
-    fg = colors.shade0,
+    fg = colors.shade5,
     bg = colors.shade3
 })
 
 local lighter_fg = builtin.containers.plain("lighter_fg", {
-    fg = colors.shade4
+    fg = colors.shade6
 })
 
 local mode = function(stl)
