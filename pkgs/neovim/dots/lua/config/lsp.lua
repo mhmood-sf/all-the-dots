@@ -77,3 +77,6 @@ lspcfg.zls.setup {}
 
 -- Markdown (Marksman)
 lspcfg.marksman.setup {}
+
+-- TypeScript (deno)
+lspcfg.denols.setup {}

@@ -2,6 +2,7 @@
 rec {
   # Languages & Runtimes.
   c       = pkgs.callPackage ./c.nix { };
+  deno    = pkgs.callPackage ./deno.nix { };
   elan    = pkgs.callPackage ./elan.nix { };
   haskell = pkgs.callPackage ./haskell.nix { };
   hello   = pkgs.callPackage ./hello.nix { };

@@ -5,7 +5,7 @@ let
     aks-nvim = vimUtils.buildVimPlugin {
       name = "aks-nvim";
       src = fetchFromGitHub {
-        owner = "mhmood-sf";
+        owner = "msaifi03";
         repo = "aks-nvim";
         rev = "e165b58559f7fccd18f6f982c024ccc0b88e8609";
         hash = "sha256-VQR6eoj7uiNBJsDimGDZP+W1Mfc+hvQDX5z76tMgals=";
@@ -14,7 +14,7 @@ let
     lazyfox-nvim = vimUtils.buildVimPlugin {
       name = "lazyfox-nvim";
       src = fetchFromGitHub {
-        owner = "mhmood-sf";
+        owner = "msaifi03";
         repo = "lazyfox-nvim";
         rev = "9bbcb7132c2e96198f233287cf050c2248dd0b9d";
         hash = "sha256-OU6PoeW40l6t8YEVXppruopddlbDKREI0jrerdESrCQ=";
@@ -23,7 +23,7 @@ let
     linecook-nvim = vimUtils.buildVimPlugin {
       name = "linecook-nvim";
       src = fetchFromGitHub {
-        owner = "mhmood-sf";
+        owner = "msaifi03";
         repo = "linecook-nvim";
         rev = "4d3b4d19367f57158e48efc36ed691d207b6392a";
         hash = "sha256-50Ur7g301Z4qp4EiR4hdCt22Y29jx5qGXXYS2dc22X0=";
